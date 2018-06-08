@@ -1,0 +1,5 @@
+<view class='page'>
+    <image src='/images/account_bind-success.png' />
+    <view>账户绑定成功</view>
+    <navigator class='button' open-type="switchTab" url='/pages/IwantBooking/IwantBooking'>确定</navigator>
+</view>

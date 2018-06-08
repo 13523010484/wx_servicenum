@@ -1,0 +1,200 @@
+{
+	"description": "项目配置文件。",
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "1.9.9",
+	"appid": "wxb2f085513877effa",
+	"projectname": "wx_servicenum",
+	"isGameTourist": false,
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": -1,
+			"list": [
+				{
+					"id": 0,
+					"name": "personCenter",
+					"pathName": "pages/personCenter/personCenter",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "login",
+					"pathName": "pages/login/login",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "bindSuccess",
+					"pathName": "pages/bindSuccess/bindSuccess",
+					"query": ""
+				},
+				{
+					"id": 3,
+					"name": "electronicCoupons",
+					"pathName": "pages/electronicCoupons/electronicCoupons",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "memberCard",
+					"pathName": "pages/memberCard/memberCard",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "memberCardActivation",
+					"pathName": "pages/memberCardActivation/memberCardActivation",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "reservationAuthorization",
+					"pathName": "pages/reservationAuthorization/reservationAuthorization",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "addReservationCustomer",
+					"pathName": "pages/addReservationCustomer/addReservationCustomer",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "reservationAuthorizationList",
+					"pathName": "pages/reservationAuthorizationList/reservationAuthorizationList",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "authorization",
+					"pathName": "pages/authorization/authorization",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "IwantBooking",
+					"pathName": "pages/IwantBooking/IwantBooking",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "bookingSuccess",
+					"pathName": "pages/bookingSuccess/bookingSuccess",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "bookingNow",
+					"pathName": "pages/bookingNow/bookingNow",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "searchResults",
+					"pathName": "pages/searchResults/searchResults",
+					"query": ""
+				},
+				{
+					"id": 16,
+					"name": "bookingSearchResults",
+					"pathName": "pages/bookingSearchResults/bookingSearchResults",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "bookingSubmit",
+					"pathName": "pages/bookingSubmit/bookingSubmit",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "bookingRights",
+					"pathName": "pages/bookingRights/bookingRights",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "addShoppingCart",
+					"pathName": "pages/addShoppingCart/addShoppingCart",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "shoppingCart",
+					"pathName": "pages/shoppingCart/shoppingCart",
+					"query": ""
+				},
+				{
+					"id": 21,
+					"name": "bookingSelectDate",
+					"pathName": "pages/bookingSelectDate/bookingSelectDate",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "getUserPhoneNumber",
+					"pathName": "pages/getUserPhoneNumber/getUserPhoneNumber",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "解除绑定",
+					"pathName": "pages/bindCancel/bindCancel",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "日历组件",
+					"pathName": "pages/calendar/calendar",
+					"query": ""
+				},
+				{
+					"id": 25,
+					"name": "卡权益",
+					"pathName": "pages/cardRights/cardRights",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "日历修改",
+					"pathName": "pages/newCalendar/calendar",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "查看预订信息",
+					"pathName": "pages/bookOrder/bookOrder",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "评价",
+					"pathName": "pages/bookOrderEvaluation/bookOrderEvaluation",
+					"query": ""
+				}
+			]
+		}
+	}
+}

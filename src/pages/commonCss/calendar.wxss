@@ -1,0 +1,120 @@
+.calendar {
+    font-size: 30rpx;
+    color: #333;
+}
+
+.calendar-mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #000;
+    opacity: 0.5;
+    width: 100%;
+    height: 100%;
+    z-index: 20;
+}
+
+.calendar-content {
+    background: #fff;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 30;
+}
+
+.calendar_toolbar {
+    height: 100rpx;
+    line-height: 100rpx;
+    padding: 0 24rpx;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1rpx #eee solid;
+}
+
+.calendar_toolbar .toolbar-cancel {
+    color: #666;
+}
+
+.calendar_toolbar .toolbar-confirm {
+    color: #fba451;
+}
+
+.select-month {
+    height: 100rpx;
+    line-height: 100rpx;
+    text-align: center;
+    border-bottom: 1rpx #eee solid;
+}
+
+.select-month text:nth-child(2) {
+    width: 170rpx;
+    display: inline-block;
+}
+
+.weekday-title {
+    display: flex;
+}
+
+.weekday-title view {
+    width: 107rpx;
+    text-align: center;
+    height: 100rpx;
+    line-height: 100rpx;
+}
+
+.days checkbox-group, .days radio-group {
+    background-color: #fff3e8;
+    font-size: 28rpx;
+    color: #333;
+    display: flex;
+    flex-wrap: wrap;
+    min-height: 540rpx;
+}
+
+.days checkbox-group label{
+    color: #333;
+}
+
+.days checkbox-group label, .days radio-group label {
+    width: 107rpx;
+    height: 90rpx;
+    line-height: 90rpx;
+    text-align: center;
+    box-sizing: border-box;
+    border-right: 1rpx solid #fff;
+    border-bottom: 1rpx solid #fff;
+}
+
+.days checkbox-group label:nth-child(7n), .days radio-group label:nth-child(7n) {
+    width: 108rpx;
+    border-right: none;
+}
+
+.ui-check radio, .ui-check checkbox {
+    display: none;
+}
+
+.ui-check radio[checked]+.cell, .ui-check checkbox[checked]+.cell {
+    width: 100%;
+    height: 100%;
+    background-color: #ffbd7f;
+}
+
+.cell {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.cell-color {
+    color: #e64340;
+}
+
+.num-mark {
+    font-size: 20rpx;
+    position: absolute;
+    right: 10rpx;
+    bottom: 10rpx;
+    line-height: 20rpx;
+}

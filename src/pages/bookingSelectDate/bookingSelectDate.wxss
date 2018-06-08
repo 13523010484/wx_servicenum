@@ -1,0 +1,199 @@
+@import '/pages/commonCss/common.wxss';
+@import '/pages/commonCss/calendar.wxss';
+@import '/pages/addShoppingCart/addShoppingCart.wxss';
+
+.item {
+    align-items: center;
+}
+
+.right-grey {
+    color: #999;
+    font-size: 28rpx;
+}
+
+.page>.page_select-date {
+    border-bottom: none;
+}
+
+.page_content-title>picker {
+    position: relative;
+    width: 150rpx;
+}
+
+.page_content-title picker::after {
+    content: "";
+    display: inline-block;
+    height: 12rpx;
+    width: 12rpx;
+    border-width: 0 4rpx 4rpx 0;
+    border-color: #c8c8cd;
+    border-style: solid;
+    -webkit-transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
+    transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
+    top: -2px;
+    position: absolute;
+    top: 50%;
+    margin-top: -4px;
+    left: 70rpx;
+}
+
+.page_content-center {
+    font-size: 28rpx;
+}
+
+.page_content-center view:nth-child(2), .page_content-title view:nth-child(2) {
+    text-align: center;
+}
+
+.page_content-center view:nth-child(3), .page_content-title view:nth-child(3) {
+    text-align: right;
+}
+
+.page_content-center view:nth-child(1)>text {
+    margin-left: 30rpx;
+    color: #333;
+}
+
+.page_content-center view:nth-child(3) {
+    color: #999;
+}
+
+.commodity_screen {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: #000;
+    opacity: 0.5;
+    overflow: hidden;
+    z-index: 1000;
+    color: #fff;
+}
+
+.commodity_attr_box {
+    height: 500rpx;
+    width: 100%;
+    overflow: hidden;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 2000;
+    background: #fff;
+    font-size: 30rpx;
+    color: #333;
+}
+
+.layer_top-btn {
+    padding: 0 24rpx;
+    display: flex;
+    justify-content: space-between;
+    height: 100rpx;
+    line-height: 100rpx;
+    box-sizing: border-box;
+    border-bottom: 1rpx #eee solid;
+}
+
+.layer_top-btn view:first-child {
+    color: #666;
+}
+
+.layer_top-btn view:last-child {
+    color: #fba451;
+}
+
+.layer_center-item {
+    padding: 0 24rpx;
+    display: flex;
+    justify-content: space-between;
+    height: 100rpx;
+    line-height: 100rpx;
+    border-bottom: 1rpx #eee solid;
+}
+
+.food-diet {
+    height: auto;
+    flex-direction: column;
+    align-items: left;
+    padding-bottom: 42rpx;
+}
+
+.food_diet-title {
+    margin-top: 36rpx;
+}
+
+.food_diet-checkbox label {
+    line-height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+checkbox-group label {
+    margin-right: 0;
+    margin-top: 0;
+}
+
+.checkbox-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.checkbox-group label {
+    font-size: 30rpx;
+    color: #333;
+    padding: 0 24rpx;
+    line-height: 100rpx;
+    border-bottom: 1rpx #eee solid;
+    display: flex;
+    justify-content: space-between;
+}
+
+.checkbox-group label checkbox {
+    width: 40rpx;
+}
+
+.show-num {
+    text-align: center;
+}
+
+.page_btn {
+    background: none;
+}
+
+.page_btn-wrap>button {
+    color: #fff;
+    height: 100rpx;
+    font-size: 30rpx;
+    line-height: 100rpx;
+    flex: 1;
+}
+
+.page_btn-wrap {
+    position: relative;
+}
+
+.live_book_date {
+    min-height: 100rpx;
+    height: auto;
+}
+
+.live_book_date>view:last-child {
+    line-height: 48rpx;
+}
+
+.ground_room {
+    min-height: 100rpx;
+    height: auto;
+}
+
+.ground_room>view:last-child {
+    line-height: 48rpx;
+}
+
+.room_num>view:last-child {
+    color: #999;
+}
+
+.page_content-note {
+    margin-bottom: 70rpx;
+}

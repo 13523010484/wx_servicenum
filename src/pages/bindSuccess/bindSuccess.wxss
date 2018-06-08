@@ -1,0 +1,27 @@
+/* pages/bindSuccess/bindSuccess.wxss */
+.page image {
+    width: 446rpx;
+    height: 213rpx;
+    display: block;
+    margin: 168rpx auto 0;
+}
+
+.page view {
+    color: #999;
+    font-size: 28rpx;
+    text-align: center;
+    width: 483rpx;
+    margin: 73rpx auto 0;
+}
+
+.page .button {
+    height: 90rpx;
+    line-height: 90rpx;
+    text-align: center;
+    margin: 112rpx auto 0;
+    font-size: 30rpx;
+    width: 300rpx;
+    background-color: #fba451;
+    color: #fff;
+    border-radius: 5rpx;
+}

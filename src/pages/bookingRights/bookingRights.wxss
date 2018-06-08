@@ -1,0 +1,51 @@
+@import '/pages/commonCss/common.wxss';
+@import '/pages/bookingNow/bookingNow.wxss';
+
+.page_rights-booking {
+    background-color: #fff;
+}
+
+.page_rights-booking .rights_booking-header {
+    font-size: 32rpx;
+    color: #333;
+    height: 84rpx;
+    line-height: 84rpx;
+    padding: 0 24rpx;
+    border-bottom: 1rpx #eee solid;
+}
+
+radio {
+    transform: scale(0.8);
+    margin-right: 15rpx;
+}
+
+.radio-group label.radio {
+    padding-right: 24rpx;
+    height: 152rpx;
+    line-height: 152rpx;
+    font-size: 32rpx;
+    color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1rpx #eee solid;
+}
+
+.radio-group label.radio:last-child {
+    border-bottom: none;
+}
+
+.radio-group label.radio radio text {
+    margin-left: 14rpx;
+}
+
+.radio-group label.radio .card-label {
+    padding: 0 22rpx;
+    display: block;
+    font-size: 26rpx;
+    height: 48rpx;
+    line-height: 48rpx;
+    color: #fba451;
+    background-color: #fff6ed;
+    border-radius: 5rpx;
+}

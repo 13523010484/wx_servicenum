@@ -1,0 +1,52 @@
+/* pages/memberCardActivation/memberCardActivation.wxss */
+@import '/pages/commonCss/common.wxss';
+
+.header, .page-psw {
+    background-color: #fff;
+    padding: 0 30rpx;
+}
+
+.header {
+    margin-top: 30rpx;
+    font-size: 36rpx;
+    height: 120rpx;
+    line-height: 120rpx;
+    border-bottom: 1rpx #eee solid;
+}
+
+.page-psw {
+    margin-top: 24rpx;
+}
+
+.page-part view text:first-child {
+    color: #333;
+}
+
+.page-part view text:last-child {
+    color: #999;
+    font-size: 28rpx;
+}
+
+.page .page-psw, .page>view:nth-child(5) {
+    border-bottom: none;
+}
+
+.page-psw>view {
+    display: flex;
+    align-items: center;
+    width: 242rpx;
+}
+
+.page-psw view input {
+    height: 100rpx;
+    line-height: 100rpx;
+    width: 213rpx;
+}
+
+.page-psw .image {
+    width: 29rpx;
+    height: 18rpx;
+    background-size: 100%;
+    background-position: 100%;
+    background-repeat: no-repeat;
+}

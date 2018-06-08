@@ -1,0 +1,63 @@
+<!--pages/bookingRights/bookingRights.wxml-->
+<view class='page'>
+    <!-- banner图片轮播  -->
+    <view class='page_top'>
+        <swiper class='page_banner' autoplay="true" interval="{{interval}}" duration="{{duration}}">
+            <block wx:for="{{imgUrls}}" wx:key='index'>
+                <swiper-item>
+                    <image mode='widthFix' src="{{item}}" />
+                </swiper-item>
+            </block>
+        </swiper>
+        <view class='page_header'>
+            <view class='page_header-title'>五云山养生公寓一室一厅</view>
+            <view class='page_header-tel'>
+                <image src='/images/icon_tel-orange.png' />
+                <text>电话</text>
+            </view>
+        </view>
+    </view>
+    <!--服务设施  -->
+    <view class='page_icon-items'>
+        <view>服务设施</view>
+        <view class='page_icon-item'>
+            <view wx:for='{{imgArr}}' wx:key='index'>
+                <image src='{{item}}' />
+            </view>
+        </view>
+    </view>
+    <!--权益预订  -->
+    <view class='page_rights-booking'>
+        <view class='rights_booking-header'>权益预订 [4]</view>
+        <radio-group class='radio-group' bindchange='radioChange'>
+            <label class='radio'>
+                <radio color='#fba451' value='' checked='true'>
+                    <text>养生公寓一室一厅</text>
+                </radio>
+                <text class='card-label'>卡名称显示</text>
+            </label>
+            <label class='radio'>
+                <radio color='#fba451' value='' checked='true'>
+                    <text>养生公寓一室一厅</text>
+                </radio>
+                <text class='card-label'>卡名称显示</text>
+            </label>
+            <label class='radio'>
+                <radio color='#fba451' value='' checked='true'>
+                    <text>养生公寓一室一厅</text>
+                </radio>
+                <text class='card-label'>卡名称显示</text>
+            </label>
+        </radio-group>
+    </view>
+    <!--消费点介绍  -->
+    <view class='page_icon-items'>
+        <view>消费点介绍</view>
+        <rich-text nodes='{{nodes[0]}}'></rich-text>
+    </view>
+    <navigator url='../shoppingCart/shoppingCart' hover-class='none' class='page_shopping-cart'>
+        <image mode='widthFix' src='/images/icon_cart.png' />
+        <view class='page_shopping-badge'>2</view>
+    </navigator>
+    <navigator url='../bookingSelectDate/bookingSelectDate' class='page_btn'>立即预订</navigator>
+</view>

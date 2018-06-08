@@ -1,0 +1,6 @@
+<!--pages/reservationAuthorization/reservationAuthorization.wxml-->
+<view class='page'>
+      <image src='/images/reservation_authorization.png' />
+      <view>您好！您尚未添加授权客户，添加后，可为该用户授权会员卡！ </view>
+      <navigator url='../addReservationCustomer/addReservationCustomer' class='button' bindtap='jumpAddReservationCustomer'>立即添加</navigator>
+</view>

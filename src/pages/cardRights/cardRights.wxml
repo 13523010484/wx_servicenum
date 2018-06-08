@@ -1,0 +1,24 @@
+<view class='page'>
+    <view class='lists' wx:for='{{resultData}}'>
+        <view class='list'>
+            <view class='item'>
+                <view>{{item.right_name}}</view>
+                <view>（{{item.dictName}}）</view>
+            </view>
+            <view class='num'>
+                <view>
+                    <text>{{item.total_quantity}}</text>
+                    <text>数量</text>
+                </view>
+                <view>
+                    <text>{{item.available_quantity}}</text>
+                    <text>可用</text>
+                </view>
+                <view>
+                    <text>{{item.invalid_date}}</text>
+                    <text>有效期</text>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

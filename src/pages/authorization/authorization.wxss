@@ -1,0 +1,61 @@
+@import '/pages/commonCss/common.wxss';
+
+.page_card {
+    background-color: #fff;
+}
+
+.page_card>view:first-child {
+    padding: 0 30rpx;
+    margin-top: 24rpx;
+    height: 100rpx;
+    line-height: 100rpx;
+    color: #333;
+    font-size: 32rpx;
+    border-bottom: 1rpx #eee solid;
+}
+
+.radio-group label {
+    padding: 0 30rpx;
+    height: 100rpx;
+    line-height: 100rpx;
+    display: block;
+    font-size: 26rpx;
+    color: #999;
+}
+
+.radio {
+    border-bottom: 1rpx #eee solid;
+}
+
+.label-add {
+    padding-right: 30rpx;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.label-add>label {
+    display: inline-block;
+}
+
+.icon-img {
+    width: 194rpx;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.icon-img>image {
+    width: 40rpx;
+    height: 40rpx;
+}
+
+.icon-img>text {
+    color: #333;
+    font-size: 32rpx;
+}
+
+radio {
+    transform: scale(0.8);
+    margin-right: 15rpx;
+}

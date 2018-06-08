@@ -1,0 +1,35 @@
+<!--pages/shoppingCart/shoppingCart.wxml-->
+<view class='page'>
+    <view class='page_edit' wx:for='{{carts_results}}' wx:key='index'>
+        <label>
+            <icon bindtap="selectList" wx:if="{{item.selected}}" id='{{index}}' type="success" color='#fba451' class="cart-pro-select" />
+            <icon bindtap="selectList" wx:else type="circle" id='{{index}}' class="cart-pro-select" />
+        </label>
+        <view class='page_edit-center'>
+            <view>
+                <text class='header'>{{item.srnc_name}}</text>
+                <text class='badge {{(item.order_category == 1?"orange":"")||(item.order_category == 2?"red":"")||(item.order_category == 4?"green":"")||(item.order_category == 8?"blue":"")||(item.order_category == 16?"yellow":"")}}'>{{item.category_name}}</text>
+            </view>
+            <view>{{item.cp_name}}</view>
+            <view>预订日期：{{item.period}}</view>
+            <view>剩余时间：{{item.left_minute}}分钟</view>
+        </view>
+        <view class='page_eidt-right'>
+        
+            <navigator url='/pages/bookingSelectDate/bookingSelectDate?mrd_id={{item.mrd_id}}&srnc_id={{item.srnc_id}}&card_type_id={{item.mcd_id}}&cp_id={{item.cp_id}}&book_id={{item.book_id}}&order_category={{item.order_category}}' hover-class='none'>
+                <image mode='widthFix' src='/images/icon_edit.png' />
+            </navigator>
+            <image mode='widthFix' data-index='{{index}}' bindtap='deleteList' src='/images/icon_delete-small.png' />
+        </view>
+    </view>
+    <!-- footer  -->
+    <view class="cart-footer">
+        <label bindtap="selectAll">
+            <icon wx:if="{{selectAllStatus}}" type="success" color="#fba451" />
+            <icon wx:else type="circle" />
+            <text>全选</text>
+        </label>
+        <navigator url='/pages/IwantBooking/IwantBooking' open-type='switchTab' class='btn-booking'>继续预订</navigator>
+        <view class='btn-submit' bindtap='submit'>提交</view>
+    </view>
+</view>

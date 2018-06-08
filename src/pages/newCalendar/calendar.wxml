@@ -1,0 +1,50 @@
+<!--pages/calendar/calendar.wxml-->
+<view class='calendar'>
+    <view class='calendar-mask'></view>
+    <view class='calendar-content'>
+        <view class='calendar_toolbar'>
+            <view class='toolbar-cancel'>取消</view>
+            <view class='toolbar-title'>可预订日期选择</view>
+            <view class='toolbar-confirm'>确定</view>
+        </view>
+        <view class='select-month'>
+            <text>{{cur_mon_str}}</text>
+        </view>
+        <view class='weekday-title'>
+            <view>日</view>
+            <view>一</view>
+            <view>二</view>
+            <view>三</view>
+            <view>四</view>
+            <view>五</view>
+            <view>六</view>
+        </view>
+        <view class='days'>
+            <!-- 本月  -->
+            <view class='month current-month'>
+                <!-- 多选  -->
+                <checkbox-group wx:if='{{isMulti}}' bindchange='checkboxChange'>
+                    <block wx:for='{{week_arr}}' wx:key='index'>
+                        <label class='ui-check {{checked==true?"active":""}}'>
+                            <checkbox value='{{item.book_time}}' checked='{{item.checked}}' />
+                            <view class='cell'>{{item.show_time}}
+                                <text class='num-mark'>{{item.info}}</text>
+                            </view>
+                        </label>
+                    </block>
+                </checkbox-group>
+                <!-- 单选  -->
+                <radio-group wx:if='{{!isMulti}}' bindchange='radioChange'>
+                    <block wx:for='{{week_arr}}' wx:key='index'>
+                        <label style='height:90rpx;' class='ui-check {{checked==true?"active":""}}'>
+                            <radio disabled='{{item.info == ""?true:false}}' value='{{item.book_time}}' checked='{{item.checked}}' />
+                            <view class='cell {{item.show_time == "01"?"cell-color":""}}'>{{item.show_time}}
+                                <text class='num-mark'>{{item.info}}</text>
+                            </view>
+                        </label>
+                    </block>
+                </radio-group>
+            </view>
+        </view>
+    </view>
+</view>

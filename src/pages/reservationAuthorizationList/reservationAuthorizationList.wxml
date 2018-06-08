@@ -1,0 +1,41 @@
+<!--pages/reservationAuthorizationList/reservationAuthorizationList.wxml-->
+<view class='page'>
+    <view class='page_authorize'>
+        <view class='page_authorize-continue'>
+            <view class='user-name'>JF</view>
+            <image src='/images/icon_delete.png' bindtap='Delete' />
+            <view class='authorize-continue'>继续授权</view>
+        </view>
+        <view class='authorize-info'>
+            <view class='info'>
+                <view class='title'>发现生活卡</view>
+                <view class='instructions'>说明：已授权该用户庄主生活卡相关权益</view>
+                <view class='deadline'>授权截止时间：2017-08-20(4周)</view>
+            </view>
+            <view class='btn'>解除</view>
+        </view>
+        <view class='authorize-info'>
+            <view class='info'>
+                <view class='title'>发现生活卡</view>
+                <view class='instructions'>说明：已授权该用户庄主生活卡相关权益</view>
+                <view class='deadline'>授权截止时间：2017-08-20(4周)</view>
+            </view>
+            <view class='btn'>解除</view>
+        </view>
+    </view>
+    <view class='page_authorize'>
+        <view class='page_authorize-continue'>
+            <view class='user-name'>JF</view>
+            <view class='delete' bindtap='Delete'>删除</view>
+            <view class='authorize-continue'>授权</view>
+        </view>
+    </view>
+    <view class='page_authorize'>
+        <view class='page_authorize-continue'>
+            <view class='user-name'>JF</view>
+            <view class='delete' bindtap='Delete'>删除</view>
+            <view class='authorize-continue'>授权</view>
+        </view>
+    </view>
+    <button class='page_btn' bindtap='addTo'>添加用户</button>
+</view>

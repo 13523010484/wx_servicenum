@@ -1,0 +1,127 @@
+@import '/pages/commonCss/common.wxss';
+
+.page>.page_part>view {
+    border-bottom: 1rpx #eee solid;
+}
+
+.page>.page_part {
+    margin-top: 24rpx;
+}
+
+.page_content-top, .item, .page_content-note {
+    padding: 0 24rpx;
+    background-color: #fff;
+    color: #333;
+    font-size: 30rpx;
+}
+
+.page_content-top {
+    padding-top: 40rpx;
+    padding-bottom: 40rpx;
+}
+
+.page_header {
+    display: flex;
+    align-items: center;
+}
+
+.page_header .header {
+    font-size: 46rpx;
+    margin-right: 14rpx;
+}
+
+.card-label-wrap .card-label {
+    margin: 28rpx 20rpx 0 0;
+    padding: 0 22rpx;
+    display: inline-block;
+    font-size: 26rpx;
+    height: 48rpx;
+    line-height: 48rpx;
+    box-sizing: border-box;
+    color: #fba451;
+    background-color: #fff6ed;
+    border: 1rpx #fba451 solid;
+    border-radius: 5rpx;
+}
+
+.booking-tip {
+    margin-top: 26rpx;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.booking-tip view:first-child {
+    font-size: 24rpx;
+    color: #bbb;
+}
+
+.booking-tip image {
+    margin-right: 14rpx;
+    width: 20rpx;
+}
+
+.booking-tip view:last-child {
+    display: flex;
+    align-items: center;
+    font-size: 26rpx;
+    color: #f9a250;
+}
+
+.item text:last-child {
+    font-size: 28rpx;
+    color: #999;
+}
+
+.page_content-note {
+    padding-top: 32rpx;
+    padding-bottom: 50rpx;
+}
+
+.page_content-note view:last-child, .page_content-note textarea {
+    font-size: 28rpx;
+    color: #999;
+    margin-top: 28rpx;
+    line-height: 50rpx;
+    width: 100%;
+}
+
+/* 预定时间段 css  */
+
+.booking-period {
+    background-color: #fff;
+    padding: 0 24rpx;
+    align-items: center;
+}
+
+.booking-period>view:first-child {
+    font-size: 30rpx;
+}
+
+.booking-period>view:last-child {
+    min-height: 100rpx;
+    display: flex;
+    flex-direction: column;
+    color: #999;
+    justify-content: center;
+}
+
+.booking-period>view:last-child text {
+    margin-top: 18rpx;
+    font-size: 28rpx;
+}
+
+.booking-period>view:last-child text:first-child {
+    margin-top: 0;
+    padding-top: 20rpx;
+}
+
+.booking-period>view:last-child text:last-child {
+    padding-bottom: 26rpx;
+}
+
+.booking-period {
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+}

@@ -1,0 +1,85 @@
+<!--pages/addShoppingCart/addShoppingCart.wxml-->
+<view class='page'>
+    <view class='page_content-top'>
+        <view class='page_header'>
+            <!-- badge 游、场、用、住、餐 五种颜色  -->
+            <!-- 用餐类  -->
+            <!-- <text class='badge red'>餐</text> -->
+            <text class='badge green'>住</text>
+            <text class='header'>五云山中型别墅两室</text>
+
+        </view>
+        <view class='booking-tip'>消费点名称显示</view>
+    </view>
+    <view class='item booking-date multi-date'>
+        <view>预订日期</view>
+        <view>
+            <text>2018-03-19 </text>
+            <text>2018-03-19 </text>
+            <text>2018-03-19 </text>
+            <text>2018-03-19 </text>
+        </view>
+    </view>
+    <!-- "场地类" 预订时间段  -->
+    <view class='item booking-date'>
+        <view>预订时间段</view>
+        <view>09:00-10:00</view>
+    </view>
+    <view class='item booking-num'>
+        <view>数量</view>
+        <view class='icon_add-wrap'>
+            <image mode='widthFix' bindtap='Reduce' src='{{srcReduce}}' />
+            <text class='show-num' bindtap='bindNum'>{{num}}</text>
+            <image mode='widthFix' bindtap='Increase' src='{{srcIncrease}}' />
+        </view>
+    </view>
+    <!-- "用" 领用时间  -->
+    <view class='item booking-date'>
+        <view>领用时间</view>
+        <view>上午</view>
+    </view>
+    <!-- "餐" 用餐时间  -->
+    <view class='item booking-date'>
+        <view>用餐时间</view>
+        <view>午餐 10:00-13:00</view>
+    </view>
+    <!-- "餐" 餐型  -->
+    <view class='item booking-date'>
+        <view>餐型</view>
+        <view>A午餐</view>
+    </view>
+    <!-- "餐" 桌型  -->
+    <view class='item booking-date'>
+        <view>桌型</view>
+        <view>桌一</view>
+    </view>
+    <view class='item booking-date'>
+        <view>使用人</view>
+        <view>请选择</view>
+    </view>
+    <!-- "餐" 忌口  -->
+    <view class='item food-diet'>
+        <view class='food_diet-title'>忌口</view>
+        <view class='food_diet-checkbox'>
+            <checkbox-group bindchange="checkboxChange">
+                <label wx:for="{{checkBoxArr}}">
+                    <checkbox value="{{index}}"/>
+                    <view>{{item.value}}</view>
+                </label>
+            </checkbox-group>
+        </view>
+    </view>
+    <view class='page_content-note'>
+        <view>备注</view>
+        <textarea auto-focus placeholder='请输入备注内容！'></textarea>
+    </view>
+    <!-- 立即预订跳转的页面  -->
+    <view class='page_btn page_btn-wrap'>
+        <navigator url=''>加购物车</navigator>
+        <navigator class='lastchild-bgc' url=''>提交预订</navigator>
+    </view>
+    <!--确认修改跳转的页面  -->
+    <!-- <view wx:if='' class='page_btn-wrap'>
+        <navigator url=''>确定修改</navigator>
+    </view> -->
+</view>

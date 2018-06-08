@@ -1,0 +1,44 @@
+.item {
+    padding: 46rpx 30rpx 58rpx;
+    margin-top: 24rpx;
+}
+.item:first-child{
+    margin-top: 0;
+}
+
+.item .img image {
+    margin: 0 auto;
+    background-color: #eee;
+    border-radius: 20rpx;
+    display: block;
+    width: 600rpx; 
+}
+
+.item .header {
+    font-size: 36rpx;
+    color: #333;
+}
+
+.item .time {
+    margin-top: 24rpx;
+    font-size: 24rpx;
+    color: #999;
+}
+
+.item .txt {
+    margin-top: 38rpx;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.item .txt .txt-bd {
+    width: 140rpx;
+    height: 65rpx;
+    line-height: 65rpx;
+    border-radius: 65rpx;
+    text-align: center;
+    font-size: 26rpx;
+    color: #fff;
+    background-color: #fba451;
+}

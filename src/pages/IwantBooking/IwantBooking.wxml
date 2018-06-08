@@ -1,0 +1,32 @@
+<!--pages/IwantBooking/IwantBooking.wxml-->
+<view class='page'>
+    <!-- 我要预订首页 -->
+    <view class='page_search'>
+        <image class='image' mode='widthFix' src='/images/IwantBooking.jpg' />
+        <view class='title'>奥伦达部落欢迎您</view>
+        <view class='title'>会员制健康与幸福系统运营商</view>
+        <view class='input-search'>
+            <input type='text' bindinput='bindKeyInput' bindconfirm='bindconfirm' placeholder='搜索消费点或权益名称' />
+            <navigator url='/pages/searchResults/searchResults?search_key={{search_key}}' class='icon_search'>
+                <image mode='widthFix' src='/images/icon_search.png' />
+            </navigator>
+        </view>
+    </view>
+    <!-- 多选  -->
+    <view class='page_checkbox'>
+        <checkbox-group bindchange='bindChange'>
+            <view class='checkbox_selection'>
+                <block wx:for='{{resultData.list}}' wx:key='index'>
+                    <view class='item'>
+                        <label wx:if='{{item.can_enter==1}}' class='ui-check {{checked==true?"active":""}}'>
+                            <checkbox value='{{item.val}}' checked='{{item.checked}}' />
+                            <view class='cell'>{{item.name}}</view>
+                        </label>
+                    </view>
+                </block>
+            </view>
+        </checkbox-group>
+        <view class='page_checkbox-tip'>请选择您要预订的权益类别，可多选</view>
+        <navigator url='{{checkedSum == 0?"/pages/IwantBooking/IwantBooking":"/pages/bookingSearchResults/bookingSearchResults?order_category="+checkedSum}}' class='page_btn-confirm' bindtap='submitRights'>确定</navigator>
+    </view>
+</view>

@@ -1,0 +1,57 @@
+<!--pages/searchResults/searchResults.wxml-->
+<view class='page'>
+    <view class='tab_wrap'>
+        <view class='tab {{tab_status==0?"active":""}}' id='0' bindtap='switchTab'>消费点</view>
+        <view class='tab {{tab_status==1?"active":""}}' id='1' bindtap='switchTab'>权益</view>
+    </view>
+    <view class='tab_items'>
+        <!--tab 消费点  -->
+        <view wx:if='{{tab_status == 0}}' class='tab_item' wx:for='{{results.cps.list}}'>
+            <view class='tab_item'>
+                <view bindtap='jumpBookingRightsPage'>
+                    <image mode='widthFix' src='/images/search_results-02.jpg' />
+                    <view class='header-h1'>龙泊居易度假酒店</view>
+                    <view class='header-desc'>龙泊居易度假酒店的介绍内容，如果内容多，最多显示两行</view>
+                </view>
+                <view class='header-label'>
+                    <view class='header-label-center'>
+                        <view>游</view>
+                        <view>用</view>
+                        <view>住</view>
+                        <view>餐</view>
+                        <view>场</view>
+                    </view>
+                </view>
+            </view>
+            <view class='tab_item'>
+                <view bindtap='jumpBookingRightsPage'>
+                    <image mode='widthFix' src='/images/search_results-01.jpg' />
+                    <view class='header-h1'>龙泊居易度假酒店</view>
+                    <view class='header-desc'>龙泊居易度假酒店的介绍内容，如果内容多，最多显示两行</view>
+                </view>
+                <view class='header-label'>
+                    <view class='header-label-center'>
+                        <view>游</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+
+        <!--tab 权益  -->
+        <navigator url='/pages/bookingNow/bookingNow?order_category={{item.order_category}}&srnc_id={{item.srnc_id}}&cp_id={{item.cp_id}}&mrd_id={{mrd_id}}&card_type_id={{card_type_id}}' wx:if='{{tab_status == 1}}' class='tab_item' wx:for='{{results.rights.list}}'>
+            <image mode='widthFix' src='{{item.save_path}}' />
+            <view class='header-wrap'>
+                <view class='header'>
+                    <view>{{item.rights_name}}</view>
+                    <view wx:if='{{item.card_name}}' class='card-label'>{{item.card_name}}</view>
+                    <view wx:if='{{item.is_book==0&&item.is_right_times==1}}' class='rights-discount'>{{item.mrd_rights_name}}</view>
+                </view>
+                <navigator url='{{item.is_book == 0?"/pages/bookingSelectDate/bookingSelectDate":""}}' catchtap='isBindCard' class='icon-book {{item.is_book == 0?"":"icon-booked"}}'>{{item.is_book == 0?"订":"已订"}}</navigator>
+            </view>
+        </navigator>
+    </view>
+    <navigator url='/pages/shoppingCart/shoppingCart' hover-class='none' class='page_shopping-cart'>
+        <image mode='widthFix' src='/images/icon_cart.png' />
+        <view class='page_shopping-badge'>{{results.book_count}}</view>
+    </navigator>
+</view>

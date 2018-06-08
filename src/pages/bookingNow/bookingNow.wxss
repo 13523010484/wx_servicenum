@@ -1,0 +1,103 @@
+/* pages/bookingNow/bookingNow.wxss */
+@import '/pages/commonCss/common.wxss';
+
+.page_banner {
+    height: 460rpx;
+}
+
+image.img {
+    width: 100%;
+    display: block;
+}
+
+.page_header {
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+}
+
+.page_header-title {
+    padding: 40rpx 0 40rpx 24rpx;
+    font-size: 40rpx;
+    color: #333;
+}
+
+.page_header-tel {
+    width: 214rpx;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30rpx;
+    color: #f9a250;
+    border-left: 1rpx #eee solid;
+}
+
+.page_header-tel image {
+    width: 21rpx;
+    height: 30rpx;
+    margin-right: 14rpx;
+}
+
+.page_icon-items {
+    background-color: #fff;
+    padding: 40rpx 24rpx 0;
+    margin: 24rpx 0;
+}
+
+.page_icon-items view:first-child {
+    color: #333;
+    font-size: 30rpx;
+}
+
+.page_icon-item {
+    padding: 30rpx 6rpx;
+    display: flex;
+    justify-content: space-between;
+}
+
+.page_icon-item image {
+    width: 90rpx;
+}
+
+.page_icon-items:nth-child(4) {
+    padding-bottom: 40rpx;
+    margin-bottom: 160rpx;
+}
+
+rich-text {
+    display: block;
+    padding-top: 30rpx;
+    color: #999;
+    line-height: 36rpx;
+    font-size: 26rpx;
+}
+
+.page_shopping-cart, .page_shopping-badge {
+    position: fixed;
+    z-index: 100;
+}
+
+.page_shopping-cart {
+    right: 18rpx;
+    bottom: 170rpx;
+    width: 102rpx;
+    height: 102rpx;
+}
+
+.page_shopping-cart image {
+    width: 100%;
+}
+
+.page_shopping-badge {
+    bottom: 250rpx;
+    right: 24rpx;
+    width: 30rpx;
+    height: 30rpx;
+    border-radius: 100%;
+    background-color: #f55;
+    color: #fff;
+    font-size: 20rpx;
+    line-height: 30rpx;
+    text-align: center;
+}

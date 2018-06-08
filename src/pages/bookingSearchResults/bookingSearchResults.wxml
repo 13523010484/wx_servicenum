@@ -1,0 +1,32 @@
+<view class='page'>
+    <view class='page_nav-wrap'>
+        <view class='page_search'>
+            <input type='text' bindinput='bindKeyInput' bindconfirm='bindconfirm' placeholder='搜索消费点或权益名称' />
+        </view>
+        <!-- nav -->
+        <scroll-view scroll-x="true" class="tab-wrap" scroll-left="{{scrollLeft}}">
+            <view wx:for='{{navList}}' class="tab-item {{currentTab==index?'active':''}}" data-current="{{index}}" bindtap="switchNav" wx:key='index'>{{item.name}}</view>
+        </scroll-view>
+    </view>
+    <swiper class="tab-content" current="{{currentTab}}" duration="100" bindchange="switchTab" style="height:{{winHeight}}rpx;">
+        <swiper-item wx:for='{{navIdxArr}}' wx:key='index'>
+            <block wx:for="{{contentEveryList.rights}}" wx:key='index'>
+                <navigator hover-class='none' url='/pages/bookingNow/bookingNow?order_category={{item.order_category}}&srnc_id={{item.srnc_id}}&cp_id={{item.cp_id}}&mrd_id={{item.mrd_id}}&card_type_id={{item.card_type_id}}' class='tab_item'>
+                    <image mode='widthFix' src='{{item.save_path}}' />
+                    <view class='header-wrap'>
+                        <view class='header'>
+                            <view>{{item.rights_name}}</view>
+                            <view wx:if='{{item.card_name}}' class='card-label'>{{item.card_name}}</view>
+                            <view wx:if='{{item.is_book==0&&item.is_right_times==1}}' class='rights-discount'>{{item.mrd_rights_name}}</view>
+                        </view>
+                        <view catchtap='isBindCard' data-order-category='{{item.order_category}}' data-srnc-id='{{item.srnc_id}}' data-cp-id='{{item.cp_id}}' data-mrd-id='{{item.mrd_id}}' data-card_type-id='{{item.card_type_id}}' class='icon-book {{item.is_book == 0?"":"icon-booked"}}'>{{item.is_book == 0?"订":"已订"}}</view>
+                    </view>
+                </navigator>
+            </block>
+        </swiper-item>
+    </swiper>
+    <navigator url='/pages/shoppingCart/shoppingCart' hover-class='none' class='page_shopping-cart'>
+        <image mode='widthFix' src='/images/icon_cart.png' />
+        <view class='page_shopping-badge'>{{contentEveryList.book_count}}</view>
+    </navigator>
+</view>

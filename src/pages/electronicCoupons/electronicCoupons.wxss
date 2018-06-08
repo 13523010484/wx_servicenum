@@ -1,0 +1,156 @@
+page {
+    background-color: #f5f5f5;
+}
+
+.tab_wrap {
+    height: 100rpx;
+    line-height: 100rpx;
+    background-color: #fff;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 30rpx;
+    color: #aaa;
+}
+
+.tab_wrap .active {
+    border-bottom: 2rpx #a36122 solid;
+    color: #a36122;
+}
+
+.tab_items {
+    padding: 0 30rpx;
+    margin-top: 36rpx;
+    color: #fff;
+}
+
+.tab_item .item {
+    padding: 47rpx 0 23rpx 58rpx;
+    margin-bottom: 30rpx;
+}
+
+.tab_item .item .header {
+    font-size: 36rpx;
+    line-height: 100%;
+}
+
+.tab_item .item .place, .tab_item .item .time {
+    font-size: 26rpx;
+    line-height: 100%;
+}
+
+.tab_item .item .place {
+    margin-top: 40rpx;
+}
+
+.tab_item .item .time {
+    line-height: 100%;
+    margin-top: 16rpx;
+}
+
+.tab_item .item .num {
+    font-size: 24rpx;
+    margin-top: 40rpx;
+    text-align: right;
+    margin-right: 39rpx;
+}
+
+/*  代金券使用花边使用样式实现  */
+
+/* 
+page {
+      background-color: #f5f5f5;
+}
+
+.tab_wrap {
+      height: 100rpx;
+      line-height: 100rpx;
+      background-color: #fff;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      font-size: 30rpx;
+      color: #aaa;
+}
+
+.tab_wrap .active {
+      border-bottom: 3rpx #a36122 solid;
+      color: #a36122;
+}
+
+.tab_items {
+      padding: 0 30rpx;
+      margin-top: 36rpx;
+      color: #fff;
+}
+
+.tab_item .item image {
+      width: 53rpx;
+      height: 49rpx;
+      margin-left: 575rpx;
+}
+
+.tab_item .item image:after {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: -75rpx;
+      width: 77rpx;
+      height: 260rpx;
+      transform: rotate(-48deg);
+      background-color: rgba(0, 0, 0, 0.07);
+}
+
+.tab_item .item {
+      background-color: #ddd;
+      padding: 17rpx 33rpx 23rpx 37rpx;
+      margin-bottom: 30rpx;
+      position: relative;
+      overflow: hidden;
+      background: radial-gradient(rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0) 10rpx, #ddd 10rpx);
+      background-size: 30rpx 30rpx;
+      background-position: 18rpx 6rpx;
+}
+
+.tab_item .item::before {
+      background-color: #ddd;
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 20rpx;
+      right: 20rpx;
+      z-index: -1;
+}
+
+.borderBottomGrey {
+      padding: 0 0 23rpx 21rpx;
+      border-bottom: 1px #b4b4b4 dashed;
+}
+
+.tab_item .item .header {
+      margin-top: -19rpx;
+      font-size: 36rpx;
+      line-height: 100%;
+}
+
+.tab_item .item .place, .tab_item .item .time {
+      font-size: 26rpx;
+      line-height: 100%;
+}
+
+.tab_item .item .place {
+      margin-top: 40rpx;
+}
+
+.tab_item .item .time {
+      line-height: 100%;
+      margin-top: 16rpx;
+}
+
+.tab_item .item .num {
+      font-size: 24rpx;
+      margin-top: 16rpx;
+      text-align: right;
+      margin-right: 39rpx;
+} */

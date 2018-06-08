@@ -1,0 +1,6 @@
+<!--pages/bindCancle/bindCancle.wxml-->
+<view class='page'>
+      <image src='/images/account_bind-success.png' />
+      <view>你已经在奥伦达部落五云山会员服务中心绑定过账户了！</view>
+      <view class='button' bindtap='bindCancel'>点此解除绑定</view>
+</view>

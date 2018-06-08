@@ -1,0 +1,76 @@
+@import '/pages/commonCss/common.wxss';
+
+.page>view {
+    font-size: 30rpx;
+    color: #333;
+}
+
+.page>view:first-child {
+    padding: 0 30rpx;
+    margin: 52rpx 0 25rpx;
+}
+
+.page_username {
+    border-bottom: 1rpx #eee solid;
+}
+
+.page_tel-verifi, .page_username, .page_gender {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100rpx;
+}
+
+.page_tel-verifi, .page_gender {
+    padding-right: 30rpx;
+    background-color: #fff;
+}
+
+.page_tel-verifi {
+    padding-left: 30rpx;
+}
+
+.page_tel-verifi input {
+    height: 100rpx;
+    line-height: 100rpx;
+    width: 500rpx;
+    font-size: 28rpx;
+}
+
+.page_tel-verifi .btn-check {
+    margin-right: -30rpx;
+    font-size: 28rpx;
+    color: #fff;
+    width: 220rpx;
+    text-align: center;
+    line-height: 100rpx;
+    background-color: #fba451;
+}
+
+.page_username text:last-child {
+    margin-right: 30rpx;
+}
+
+.page_user-info {
+    margin-top: 24rpx;
+    background-color: #fff;
+    padding-left: 30rpx;
+}
+
+.page_user-info>view>text:last-child {
+    font-size: 28rpx;
+    color: #999;
+}
+
+.radio-group {
+    width: 270rpx;
+    display: flex;
+    align-items: center;
+    color: #999;
+    justify-content: space-between;
+}
+
+radio {
+    transform: scale(0.8);
+    margin-right: 6rpx;
+}

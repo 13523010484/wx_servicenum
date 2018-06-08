@@ -1,0 +1,73 @@
+<!--pages/electronicCoupons/electronicCoupons.wxml-->
+<view class='page'>
+    <view class='tab_wrap'>
+        <view class='tab {{tab_status==0?"active":""}}' id='0' bindtap='switchTab'>未使用</view>
+        <view class='tab {{tab_status==1?"active":""}}' id='1' bindtap='switchTab'>已使用</view>
+    </view>
+
+
+    <view class='tab_items'>
+        <view wx:if='{{tab_status == 0}}' class='tab_item'>
+            <view class='item' style='background:url(/images/electronicCoupons-orange.png) center center no-repeat;background-size:690rpx 271rpx;'>
+                <view class='header'>端午节粽子礼券</view>
+                <view class='place'>兑换地点：西镇前台酒店</view>
+                <view class='time'>兑换时间：06-12 09:00-16:00</view>
+                <view class='num'>电子券编号：201706020026</view>
+            </view>
+
+            <view class='item' style='background:url(/images/electronicCoupons-yellow.png) center center no-repeat;background-size:690rpx 271rpx;'>
+                <view class='header'>端午节粽子礼券</view>
+                <view class='place'>兑换地点：西镇前台酒店</view>
+                <view class='time'>兑换时间：06-12 09:00-16:00</view>
+                <view class='num'>电子券编号：201706020026</view>
+            </view>
+
+            <view class='item' style='background:url(/images/electronicCoupons-green.png) center center no-repeat;background-size:690rpx 271rpx;'>
+                <view class='header'>端午节粽子礼券</view>
+                <view class='place'>兑换地点：西镇前台酒店</view>
+                <view class='time'>兑换时间：06-12 09:00-16:00</view>
+                <view class='num'>电子券编号：201706020026</view>
+            </view>
+
+            <view class='item' style='background:url(/images/electronicCoupons-skyblue.png) center center no-repeat;background-size:690rpx 271rpx;'>
+                <view class='header'>端午节粽子礼券</view>
+                <view class='place'>兑换地点：西镇前台酒店</view>
+                <view class='time'>兑换时间：06-12 09:00-16:00</view>
+                <view class='num'>电子券编号：201706020026</view>
+            </view>
+
+            <view class='item' style='background:url(/images/electronicCoupons-purple.png) center center no-repeat;background-size:690rpx 271rpx;'>
+                <view class='header'>端午节粽子礼券</view>
+                <view class='place'>兑换地点：西镇前台酒店</view>
+                <view class='time'>兑换时间：06-12 09:00-16:00</view>
+                <view class='num'>电子券编号：201706020026</view>
+            </view>
+
+            <view class='item' style='background:url(/images/electronicCoupons-yellow.png) center center no-repeat;background-size:690rpx 271rpx;'>
+                <view class='header'>端午节粽子礼券</view>
+                <view class='place'>兑换地点：西镇前台酒店</view>
+                <view class='time'>兑换时间：06-12 09:00-16:00</view>
+                <view class='num'>电子券编号：201706020026</view>
+            </view>
+        </view>
+
+
+        <view wx:if='{{tab_status == 1}}' class='tab_item'>
+            <!-- <view class='item' style='background:url(../images/electronicCoupons-grey.png) center center no-repeat;background-size:690rpx 271rpx;'>
+                        <image src='../images/electronicCoupons-coupons.png' />
+                        <view class='borderBottomGrey'>
+                              <view class='header'>端午节粽子礼券</view>
+                              <view class='place'>兑换地点：西镇前台酒店</view>
+                              <view class='time'>兑换时间：06-12 09:00-16:00</view>
+                        </view>
+                        <view class='num'>电子券编号：201706020026</view>
+                  </view> -->
+            <view class='item' style='background:url(/images/electronicCoupons-grey.png) center center no-repeat;background-size:690rpx 271rpx;'>
+                <view class='header'>端午节粽子礼券</view>
+                <view class='place'>兑换地点：西镇前台酒店</view>
+                <view class='time'>兑换时间：06-12 09:00-16:00</view>
+                <view class='num'>电子券编号：201706020026</view>
+            </view>
+        </view>
+    </view>
+</view>

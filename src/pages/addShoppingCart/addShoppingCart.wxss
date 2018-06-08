@@ -1,0 +1,151 @@
+@import '/pages/commonCss/common.wxss';
+@import '/pages/bookingSubmit/bookingSubmit.wxss';
+
+.page_content-top {
+    padding: 34rpx 24rpx;
+}
+
+.badge {
+    margin-right: 14rpx;
+}
+
+.page_header .header {
+    font-size: 32rpx;
+    margin-right: 0;
+}
+
+.booking-tip {
+    padding-left: 64rpx;
+    color: #999;
+    font-size: 24rpx;
+}
+
+.page_btn-wrap {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    align-items: center;
+}
+
+.page_btn-wrap navigator {
+    flex: 1;
+}
+
+.page_btn-wrap navigator:first-child,.page_btn-wrap button:first-child {
+    background-color: #f9a250;
+}
+
+.page_btn-wrap navigator.lastchild-bgc,.page_btn-wrap button.lastchild-bgc {
+    background-color: #d88a40;
+}
+
+.booking-date view:last-child, .booking-num view:last-child {
+    color: #999;
+    font-size: 28rpx;
+}
+
+.booking-date view:last-child {
+    position: relative;
+    right: 28rpx;
+    max-width: 490rpx;
+    text-align: right;
+}
+
+.multi-date {
+    align-items: center;
+    min-height: 100rpx;
+    height: auto;
+}
+
+.multi-date>view:last-child {
+    line-height: 48rpx;
+}
+
+.booking-date view:last-child:after {
+    content: "";
+    display: inline-block;
+    height: 12rpx;
+    width: 12rpx;
+    border-width: 4rpx 4rpx 0 0;
+    border-color: #c8c8cd;
+    border-style: solid;
+    -webkit-transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
+    transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
+    top: -2px;
+    position: absolute;
+    top: 50%;
+    margin-top: -4px;
+    right: -28rpx;
+}
+
+.icon_add-wrap {
+    width: 222rpx;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.icon_add-wrap image {
+    width: 40rpx;
+}
+
+.icon_add-wrap .show-num {
+    font-size: 32rpx;
+    color: #333;
+}
+
+.food-diet {
+    height: auto;
+    flex-direction: column;
+    align-items: left;
+    padding-bottom: 42rpx;
+}
+
+.food_diet-title {
+    margin-top: 36rpx;
+}
+
+.food_diet-checkbox label {
+    line-height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+checkbox-group {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+checkbox-group label {
+    display: flex;
+    margin-right: 55rpx;
+    margin-top: 23rpx;
+    font-size: 28rpx;
+    color: #999;
+}
+
+checkbox .wx-checkbox-input {
+    border-radius: 50%;
+    width: 40rpx;
+    height: 40rpx;
+    transform: scale(0.8);
+}
+
+checkbox .wx-checkbox-input.wx-checkbox-input-checked {
+    border: 1rpx #fba451 solid;
+    background-color: #fba451;
+}
+
+checkbox .wx-checkbox-input.wx-checkbox-input-checked::before {
+    border-radius: 50%;
+    width: 40rpx;
+    height: 40rpx;
+    line-height: 40rpx;
+    text-align: center;
+    font-size: 30rpx;
+    color: #fff;
+    background: transparent;
+    transform: translate(-50%, -50%) scale(1);
+    -webkit-transform: translate(-50%, -50%) scale(1);
+}

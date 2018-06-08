@@ -1,0 +1,9 @@
+<!--pages/bookingSuccess/bookingSuccess.wxml-->
+<view class='page'>
+     <view class='page_icon-success'>
+        <icon type='success' color='#fba451' size='65' />
+        <view>恭喜您预约成功！</view>
+        <view>如需取消或变更请至少提前24小时拨打400-888-5593进行取消或变更。</view>
+        <navigator url='/pages/bookOrder/bookOrder' class='page_btn'>查看预订单</navigator>
+     </view>
+</view>

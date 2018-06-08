@@ -1,0 +1,34 @@
+<!--pages/addReservationCustomer/addReservationCustomer.wxml-->
+<view class='page'>
+    <view>手机号</view>
+    <view class='page_tel-verifi'>
+        <input type='text' bindinput='inputTel' placeholder='请输入手机号进行校验' />
+        <view class='btn-check' bindtap='btnCheck'>校验</view>
+    </view>
+    <!-- <view class='page_user-info' wx:if='{{hidden}}'>
+            <view class='page_username'>
+                  <text>姓名</text>
+                  <text>JF</text>
+            </view>
+            <view class='page_gender'>
+                  <text>性别</text>
+                  <text>待校验</text>
+            </view>
+      </view>  -->
+    <view class='page_user-info'>
+        <view class='page_username'>
+            <text>姓名</text>
+            <text>JF</text>
+        </view>
+        <view class='page_gender'>
+            <text>性别</text>
+            <radio-group class="radio-group" bindchange="radioChange">
+                <label class="radio" wx:for="{{items}}" wx:key="radio">
+                    <radio color='#fba451' value="{{item.name}}" checked="{{item.checked}}" />{{item.value}}
+                </label>
+            </radio-group>
+
+        </view>
+    </view>
+    <button class='page_btn' bindtap='addTo'>添加</button>
+</view>

@@ -1,0 +1,18 @@
+<!--pages/login/login.wxml-->
+<view class='page'>
+      <view class='account-bind'>
+            <form bindsubmit="formSubmit">
+                  <view class='tel-num'>
+                        <image src='/images/icon_tel.png' />
+                        <input type='number' disabled="{{noEdit}}" bindinput='bindKeyInput' name='mobile_num' value='' placeholder='请输入手机号码' />
+                  </view>
+                  <view class='verific-code'>
+                        <image src='/images/icon_msg.png' />
+                        <input type='number' bindinput='bindKeyCode' name='code_num' value='' placeholder='请输入验证码' />
+                        <view wx:if='{{!show}}' disabled='true' class='button {{show==false?"":"active"}}'>发送验证码</view>
+                        <view wx:if='{{show}}' disabled='{{disabled}}' bindtap='sendCode' class='button {{show==false?"":"active"}}'>{{time}}</view>
+                  </view>
+                  <button formType="submit" bindtap='bindLogin' class='unable-submit {{noSubmit == true?".able-submit":""}}'>确认绑定</button>
+            </form>
+      </view>
+</view>

@@ -1,0 +1,35 @@
+<!--pages/bookingNow/bookingNow.wxml-->
+<view class='page'>
+    <!-- banner图片轮播  -->
+    <swiper class='page_banner' autoplay="true" interval="{{interval}}" duration="{{duration}}">
+        <block wx:for="{{results.right.images}}" wx:key='index'>
+            <swiper-item>
+                <image class='img' src="{{item.url}}" mode='widthFix' />
+            </swiper-item>
+        </block>
+    </swiper>
+    <view class='page_header'>
+        <view class='page_header-title'>{{results.right.title}}</view>
+        <view class='page_header-tel' bindtap='makePhoneCall'>
+            <image src='/images/icon_tel-orange.png' />
+            <text>电话</text>
+        </view>
+    </view>
+    <view class='page_icon-items'>
+        <view>服务设施</view>
+        <view class='page_icon-item'>
+            <view wx:for='{{results.right.devices}}' wx:key='index'>
+                <image src='{{item.url}}' mode='widthFix' />
+            </view>
+        </view>
+    </view>
+    <view class='page_icon-items'>
+        <view>权益介绍</view>
+        <rich-text nodes="{{results.right.dsc}}"></rich-text>
+    </view>
+    <navigator url='/pages/shoppingCart/shoppingCart' hover-class='none' class='page_shopping-cart'>
+        <image mode='widthFix' src='/images/icon_cart.png' />
+        <view class='page_shopping-badge'>{{results.book_count}}</view>
+    </navigator>
+    <navigator url='/pages/bookingSelectDate/bookingSelectDate?mrd_id={{results.right.mrd_id}}&srnc_id={{results.right.srnc_id}}&card_type_id={{results.right.mcd_id}}&cp_id={{results.right.cp_id}}&book_id={{results.right.book_id}}&order_category={{results.right.order_category}}' class='page_btn'>立即预订</navigator>
+</view>

@@ -1,0 +1,64 @@
+{
+    "pages": [
+        "pages/personCenter/personCenter",
+        "pages/login/login",
+        "pages/IwantBooking/IwantBooking",
+        "pages/bookOrder/bookOrder",
+        "pages/bindSuccess/bindSuccess",
+        "pages/bindCancel/bindCancel",
+        "pages/electronicCoupons/electronicCoupons",
+        "pages/memberCard/memberCard",
+        "pages/memberCardActivation/memberCardActivation",
+        "pages/reservationAuthorization/reservationAuthorization",
+        "pages/addReservationCustomer/addReservationCustomer",
+        "pages/reservationAuthorizationList/reservationAuthorizationList",
+        "pages/authorization/authorization",
+        "pages/bookingSuccess/bookingSuccess",
+        "pages/bookingNow/bookingNow",
+        "pages/searchResults/searchResults",
+        "pages/bookingSearchResults/bookingSearchResults",
+        "pages/bookingSubmit/bookingSubmit",
+        "pages/bookingRights/bookingRights",
+        "pages/addShoppingCart/addShoppingCart",
+        "pages/shoppingCart/shoppingCart",
+        "pages/bookingSelectDate/bookingSelectDate",
+        "pages/getUserPhoneNumber/getUserPhoneNumber",
+        "pages/calendar/calendar",
+        "pages/cardRights/cardRights",
+        "pages/newCalendar/calendar",
+        "pages/bookOrderEvaluation/bookOrderEvaluation"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#fff",
+        "navigationBarTitleText": "WeChat",
+        "navigationBarTextStyle": "black"
+    },
+    "networkTimeout": {
+        "request": 10000,
+        "connectSocket": 10000,
+        "uploadFile": 10000,
+        "downloadFile": 10000
+    },
+    "tabBar": {
+        "color": "#cccccc",
+        "selectedColor": "#fba451",
+        "borderStyle": "black",
+        "backgroundColor": "#ffffff",
+        "list": [
+            {
+                "pagePath": "pages/IwantBooking/IwantBooking",
+                "iconPath": "/images/booking.png",
+                "selectedIconPath": "/images/booking_active.png",
+                "text": "预订"
+            },
+            {
+                "pagePath": "pages/personCenter/personCenter",
+                "iconPath": "/images/my.png",
+                "selectedIconPath": "/images/my_active.png",
+                "text": "我的"
+            }
+        ]
+    },
+    "debug": false
+}

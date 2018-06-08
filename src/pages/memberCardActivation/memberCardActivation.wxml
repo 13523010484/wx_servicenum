@@ -1,0 +1,28 @@
+<!--pages/memberCardActivation/memberCardActivation.wxml-->
+<view class='page'>
+    <view class='header'>{{resultData.name}}</view>
+    <view class='item'>
+        <text>卡面号</text>
+        <text>{{resultData.card_id}}</text>
+    </view>
+    <view class='item'>
+        <text>卡内号</text>
+        <text>{{resultData.card_in_id=='null'?"":"无"}}</text>
+    </view>
+    <view class='item'>
+        <text>面值</text>
+        <text>{{resultData.face_value}}</text>
+    </view>
+    <view class='item'>
+        <text>卡金额</text>
+        <text>{{resultData.recharge_money}}</text>
+    </view>
+    <view class='item page-psw'>
+        <text>卡密码</text>
+        <view>
+            <input type='{{type}}' bindinput='inputPsw' value='{{inputPsw}}' placeholder='请设置卡密码' />
+            <image class='image' src='{{src}}' bindtap='showPsw' />
+        </view>
+    </view>
+    <button class='page_btn' bindtap='active'>激活</button>
+</view>

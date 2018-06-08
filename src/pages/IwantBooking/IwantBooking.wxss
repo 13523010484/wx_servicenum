@@ -1,0 +1,144 @@
+.page_search {
+    height: 420rpx;
+    position: relative;
+}
+
+.page_search image.image {
+    display: block;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.page_search .title {
+    line-height: 100%;
+    color: #fff;
+    text-align: center;
+}
+
+.page_search .title:nth-child(2) {
+    font-size: 56rpx;
+    padding-top: 119rpx;
+}
+
+.page_search .title:nth-child(3) {
+    font-size: 26rpx;
+    margin-top: 25rpx;
+}
+
+.input-search {
+    height: 70rpx;
+    line-height: 70rpx;
+    margin: 90rpx 65rpx 0;
+    position: relative;
+}
+
+.input-search>input {
+    height: 70rpx;
+    line-height: 70rpx;
+    border-radius: 70rpx;
+    font-size: 26rpx;
+    color: #333;
+    padding-left: 35rpx;
+    background-color: #fff;
+}
+
+.input-search .icon_search {
+    width: 86rpx;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 10;
+    text-align: center;
+    border-top-right-radius: 70rpx;
+    border-bottom-right-radius: 70rpx;
+    background-color: #fba451;
+}
+
+.input-search .icon_search>image {
+    width: 26rpx;
+}
+
+.page_checkbox {
+    margin: 42rpx auto 0;
+}
+
+.page_checkbox-tip {
+    margin: 60rpx auto 24rpx;
+    font-size: 26rpx;
+    color: #aaa;
+    text-align: center;
+}
+
+.page_checkbox-btn, .page_checkbox button {
+    font-size: 30rpx;
+    height: 100rpx;
+    line-height: 100rpx;
+    text-align: center;
+    color: #fff;
+    background-color: #d88a40;
+}
+
+.page_checkbox button {
+    margin-top: 24rpx;
+    background-color: #fba451;
+}
+
+/* 复选框样式修改开始 */
+
+.checkbox_selection {
+    width: 530rpx;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.checkbox_selection label {
+    background: #fff6ed;
+    font-size: 36rpx;
+    color: #fba451;
+    border-radius: 110rpx;
+    width: 228rpx;
+    height: 110rpx;
+    display: block;
+    line-height: 110rpx;
+    text-align: center;
+}
+
+.checkbox_selection .item:nth-child(1), .checkbox_selection .item:nth-child(4) {
+    margin-right: 74rpx;
+}
+
+.checkbox_selection .item:nth-child(3) {
+    margin: 50rpx auto;
+    width: 100%;
+}
+
+.checkbox_selection .item:nth-child(3)>label {
+    margin: 0 auto;
+}
+
+.ui-check checkbox {
+    display: none;
+}
+
+.ui-check checkbox[checked]+.cell {
+    color: #fff;
+    background: #fba451;
+    border-radius: 110rpx;
+}
+
+.page_btn-confirm {
+    height: 90rpx;
+    line-height: 90rpx;
+    width: 300rpx;
+    margin: 0 auto;
+    border-radius: 90rpx;
+    font-size: 32rpx;
+    color: #fff;
+    text-align: center;
+    background-color: #fba451;
+}

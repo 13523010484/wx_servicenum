@@ -1,0 +1,22 @@
+<!--pages/authorization/authorization.wxml-->
+<view class='page'>
+    <view class='page_card'>
+        <view>有机生活卡</view>
+        <radio-group class="radio-group" bindchange="radioChange">
+            <label class="radio">
+                <radio color='#fba451' value="" checked='true' />永久授权
+            </label>
+            <view class='label-add'>
+                <label>
+                    <radio color='#fba451' value="" />按时间授权(天)
+                </label>
+                <view class='icon-img'>
+                    <image src='{{srcReduce}}' bindtap='Reduce' />
+                    <text>{{num}}</text>
+                    <image src='{{srcIncrease}}' bindtap='Increase' />
+                </view>
+            </view>
+        </radio-group>
+    </view>
+    <button class='page_btn' bindtap='addTo'>授权</button>
+</view>

@@ -1,0 +1,114 @@
+<!--pages/bookingSubmit/bookingSubmit.wxml-->
+<view class='page'>
+    <view class='page_part' wx:for='{{results_data.curRights_list}}' wx:key='index'>
+        <view class='page_content-top'>
+            <view class='page_header'>
+                <text class='header'>{{item.rights_name}}</text>
+                <!-- 右侧icon图标的文字及样式显示  -->
+                <text class='badge {{(item.order_category == 1?"orange":"")||(item.order_category == 2?"red":"")||(item.order_category == 4?"green":"")||(item.order_category == 8?"blue":"")||(item.order_category == 16?"yellow":"")}}'>{{(item.order_category == 1?"用":"")||(item.order_category == 2?"餐":"")||(item.order_category == 4?"住":"")||(item.order_category == 8?"场":"")||(item.order_category == 16?"游":"")}}</text>
+            </view>
+            <view class='card-label-wrap'>
+                <text class='card-label'>{{item.card_name}}</text>
+            </view>
+            <view class='booking-tip'>
+                <view>预订后，请及时到场哦!</view>
+                <view>
+                    <image mode='widthFix' src='/images/icon_map.png' />
+                    <text>郑州</text>
+                </view>
+            </view>
+        </view>
+        <view class='item'>
+            <text wx:if='{{(item.order_category==1)||(item.order_category==16)}}'>预订地点</text>
+            <text wx:else>消费地点</text>
+            <text>{{item.cp_name}}</text>
+        </view>
+
+        <!-- 预订日期  -->
+        <view class='item'>
+            <text>预订日期</text>
+            <!-- 入住类的预订日期有多个  -->
+            <block wx:if='{{item.order_category == 4}}'>
+                <text wx:for='{{item.usedRights}}' wx:key='index'>{{item.begin_date}} ({{item.weekname}}) 权次：{{item.deduction_num}}</text>
+            </block>
+            <!-- 用餐类的预订日期有多个  -->
+            <block wx:elif='{{item.order_category == 2}}'>
+                <text wx:for='{{item.timePerson}}' wx:key='index'>{{item.begin_time}}</text>
+            </block>
+            <!-- 其他类的预订日期有多个  -->
+            <block wx:else>
+                <text>{{item.begin_date}}</text>
+            </block>
+        </view>
+
+        <!-- 预订时间段  -->
+        <view class='booking-period'>
+            <!-- 游玩类显示预订时间段 -->
+            <view>预订时间段</view>
+            <block wx:if='{{item.order_category == 8}}'>
+                <view>
+                    <text>{{item.period_name}}</text>
+                </view>
+            </block>
+            <block wx:if='{{item.order_category == 16}}'>
+                <view>
+                    <text wx:for='{{item.timePersons}}' wx:key='index'>{{item.book_time}} 数量{{item.book_num}}</text>
+                </view>
+            </block>
+        </view>
+
+        <!-- 领用时间  -->
+        <view class='item' wx:if='{{item.order_category == 1}}'>
+            <text>领用时间</text>
+            <!-- 领用类显示领用时间  -->
+            <text>{{item.receive_time==2?'上午':'下午'}}</text>
+        </view>
+        <view class='item' wx:if='{{item.order_category==8}}'>
+            <text>房间</text>
+            <text>{{item.door_name}}</text>
+        </view>
+        <view class='item' wx:if='{{item.order_category!=16}}'>
+            <text>数量</text>
+            <text>{{item.book_num}}</text>
+        </view>
+
+        <!-- 用餐类：用餐时间、套餐、桌型 -->
+        <block wx:if='{{item.order_category==2}}'>
+            <view class='item'>
+                <text>用餐时间</text>
+                <text>{{item.period_name}}</text>
+            </view>
+            <view class='item'>
+                <text>套餐</text>
+                <text>{{item.dinner_name}}</text>
+            </view>
+            <view class='item'>
+                <text>桌型</text>
+                <text>{{item.door_name}}</text>
+            </view>
+        </block>
+        <view class='item'>
+            <text>扣除权益名称</text>
+            <text>{{item.used_rights_name}}</text>
+        </view>
+        <view class='item'>
+            <text>扣除权次</text>
+            <text>{{item.need_rights_number}}</text>
+        </view>
+        <view class='item'>
+            <text>使用人</text>
+            <text>{{item.male_persons}}男{{item.female_persons}}女 {{item.elder_persons>0?'有':'无'}}老人{{item.child_persons>0?'有':'无'}}儿童</text>
+        </view>
+        <view class='page_content-note'>
+            <view>备注</view>
+            <view>{{item.note}}</view>
+        </view>
+    </view>
+    <!-- 根据上一页传给来的参数进行判断：当status:''显示提交预订;当status=2显示取消预订;当status=8或者32不显示底部按钮  -->
+    <block wx:if='{{(status == "64")||(status == "128")}}'>
+        <view bindtap='submit' class='page_btn'>提交预订</view>
+    </block>
+    <block wx:if='{{status == "2"}}'>
+        <view bindtap='cancelsubmit' class='page_btn'>取消预订</view>
+    </block>
+</view>

@@ -1,0 +1,15 @@
+<!--pages/getUserPhoneNumber/getUserPhoneNumber.wxml-->
+<view class='page'>
+    <view class='page_logo'>
+        <view>
+            <image mode='widthFix' src='/images/icon_logo.png' />
+        </view>
+        <view>奥伦达部落五云山 会员服务中心</view>
+    </view>
+    <view class='page_tip'>该程序将获取以下授权:</view>
+    <view class='page_tip-info'>是否允许获得您的手机号，为您提供更快捷的账号绑定服务</view>
+    <view class='page_btn-wrap'>
+        <button bindtap='jumpLoginPage'>拒绝</button>
+        <button open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">允许</button>
+    </view>
+</view>

@@ -1,0 +1,97 @@
+/* pages/login/login.wxss */
+@import '/pages/commonCss/common.wxss';
+.page {
+      margin-top: 132rpx;
+      padding: 0 30rpx;
+}
+.tel-num,.verific-code{
+      background-color: #fff;
+      color: #333;
+      font-size: 30rpx;
+      display: flex;
+      align-items: center;
+}
+.tel-num input,.verific-code input{
+      height: 100rpx;
+      line-height: 100rpx;
+}
+.tel-num{
+      margin-bottom: 30rpx;
+}
+.tel-num image{
+      width: 21rpx;
+      height: 31rpx;
+      margin-left: 28rpx;
+}
+.tel-num input{
+      width: 580rpx;
+      margin-left: 34rpx;
+}
+.verific-code{
+      margin-bottom: 102rpx;
+}
+.verific-code image{
+      width: 27rpx;
+      height: 21rpx;
+      margin-left: 25rpx;
+}
+.verific-code input{
+      margin-left: 30rpx;
+      width: 413rpx;
+}
+button{
+      height: 100rpx;
+      line-height: 100rpx;
+      background-color: #ffa856;
+      opacity: .5;
+      color: #fff;
+      border-radius: 5rpx;
+      border: none;
+      outline: none;
+      font-size: 30rpx;
+}
+.verific-code .button{
+      font-size: 26rpx;
+      height: 100rpx;
+      line-height: 100rpx;
+      text-align: center;
+      width: 204rpx;
+      background-color: #e8e8e8;
+      color: #fff;
+}
+.verific-code .active{
+      background-color: #ffa856;
+      opacity: .9;
+}
+.verific-code .active:active{
+      opacity: 1;
+}
+.able-submit{
+      opacity: 1;
+}
+.account-bind-success{
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      background-color: #fff;
+}
+.account-bind-success image{
+      width: 446rpx;
+      height: 213rpx;
+      display: block;
+      margin: 168rpx auto 0;
+}
+.account-bind-success view{
+      color: #999;
+      font-size: 28rpx;
+      text-align: center;
+      width: 483rpx;
+      margin: 73rpx auto 0;
+}
+.account-bind-success button,.account-unbind button{
+      opacity: 1;
+      width: 300rpx;
+      margin-top: 50rpx;
+}

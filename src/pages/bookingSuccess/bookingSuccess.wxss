@@ -1,0 +1,35 @@
+/* pages/bookingSuccess/bookingSuccess.wxss */
+
+.page_icon-success {
+    margin-top: 85rpx;
+    text-align: center;
+}
+
+.page_icon-success view {
+    line-height: 100%;
+}
+
+.page_icon-success view:nth-child(2) {
+    margin-top: 53rpx;
+    color: #fba451;
+    font-size: 36rpx;
+}
+
+.page_icon-success view:nth-child(3) {
+    font-size: 30rpx;
+    line-height: 48rpx;
+    padding: 0 60rpx;
+    color: #999;
+    margin-top: 48rpx;
+}
+
+.page_icon-success .page_btn {
+    margin: 100rpx auto 0;
+    width: 300rpx;
+    height: 90rpx;
+    line-height: 90rpx;
+    color: #fff;
+    background-color: #fba451;
+    border-radius: 5rpx;
+    font-size: 30rpx;
+}

@@ -1,0 +1,85 @@
+page {
+    background-color: #f5f5f5;
+}
+
+.item {
+    padding: 0 24rpx;
+    font-size: 30rpx;
+    display: flex;
+    justify-content: space-between;
+    height: 100rpx;
+    line-height: 100rpx;
+    background-color: #fff;
+    border-bottom: 1rpx #eee solid;
+}
+
+.page_btn {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    font-size: 30rpx;
+    text-align: center;
+    height: 100rpx;
+    line-height: 100rpx;
+    border: none;
+    outline: none;
+    border-radius: 0;
+    color: #fff;
+    background-color: #fba451;
+}
+
+button {
+    border-radius: 0;
+    border: none;
+}
+
+button::after {
+    border: none;
+}
+
+/* badge图标 */
+
+.badge {
+    display: inline-block;
+    min-width: 48rpx;
+    height: 48rpx;
+    line-height: 48rpx;
+    text-align: center;
+    border-radius: 48rpx;
+    font-size: 24rpx;
+    color: #fff;
+}
+
+/* badge 游、场、用、住、餐 */
+
+.yellow {
+    background-color: #ffb670;
+}
+
+.blue {
+    background-color: #77b0fe;
+}
+
+.orange {
+    background-color: #ff906e;
+}
+
+.green {
+    background-color: #81c951;
+}
+
+.red {
+    background-color: #ff6565;
+}
+
+.load_more, .empty {
+    font-size: 24rpx;
+    color: #999;
+    text-align: center;
+    height: 80rpx;
+    line-height: 80rpx;
+}
+
+.empty {
+    background-color: #f5f5f5;
+}

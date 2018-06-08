@@ -1,0 +1,73 @@
+/* pages/bookingSearchResults/bookingSearchResults.wxss */
+@import "/pages/commonCss/common.wxss";
+@import "/pages/searchResults/searchResults.wxss";
+
+.page_nav-wrap {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    width: 100%;
+    height: 200rpx;
+    background-color: #fff;
+}
+
+.page_search {
+    position: relative;
+    padding: 24rpx 24rpx 0;
+}
+
+.page_search input {
+    height: 70rpx;
+    line-height: 70rpx;
+    border-radius: 70rpx;
+    background-color: #f0f0f0;
+    text-align: center;
+    font-size: 26rpx;
+    color: #333;
+}
+
+.page_search image {
+    z-index: 100;
+    width: 26rpx;
+    height: 26rpx;
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 305rpx;
+}
+
+/* nav css  */
+
+.tab-wrap {
+    color: #999;
+    height: 32rpx;
+    line-height: 32rpx;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 26rpx;
+    white-space: nowrap;
+    margin-top: 40rpx;
+}
+
+.tab-item {
+    margin: 0 36rpx;
+    display: inline-block;
+}
+
+.tab-item.active {
+    color: #a36122;
+    position: relative;
+}
+
+.tab-content {
+    margin-top: 200rpx;
+}
+
+.tab_item {
+    padding: 0 24rpx;
+}
+
+swiper-item {
+    overflow-y: auto;
+}

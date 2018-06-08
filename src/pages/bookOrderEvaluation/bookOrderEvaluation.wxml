@@ -1,0 +1,39 @@
+<view class='page'>
+    <form bindsubmit="formSubmit">
+        <view class='page_part'>
+            <view>综合评分</view>
+            <view class='evalution_star'>
+                <image wx:for='{{img_arr_1}}' wx:key='index' mode='widthFix' src="{{cur_index_1>index?'/images/icon_star-active.png':'/images/icon_star.png'}}" />
+            </view>
+            <checkbox-group bindchange='bindChange' name='checkbox'>
+                <label class='ui-check {{checked==true?"active":""}}' wx:for='{{result_list}}' wx:key='index'>
+                    <checkbox value='{{item.cp_comment_label_id}}' checked='{{item.checked}}' />
+                    <view class='cell'>{{item.name}}{{item.count}}</view>
+                </label>
+            </checkbox-group>
+        </view>
+        <view class='page_part'>
+            <view class='evalution_star'>
+                <view>服务</view>
+                <image wx:for='{{img_arr_1}}' wx:key='index' mode='widthFix' id='{{item}}' data-arr-one='{{index+1}}' bindtap='starClick_1' src="{{cur_index_1>index?'/images/icon_star-active.png':'/images/icon_star.png'}}" />
+            </view>
+            <view class='evalution_star'>
+                <view>设施</view>
+                <image wx:for='{{img_arr_2}}' wx:key='index' mode='widthFix' bindtap='starClick_2' data-arr-two='{{index+1}}' id='{{img_arr_2[index]+1}}' src="{{cur_index_2>img_arr_2[index]?'/images/icon_star-active.png':'/images/icon_star.png'}}" />
+            </view>
+            <view class='evalution_star'>
+                <view>位置</view>
+                <image wx:for='{{img_arr_3}}' wx:key='index' mode='widthFix' bindtap='starClick_3' id='{{img_arr_3[index]+1}}' data-arr-three='{{index+1}}' src="{{cur_index_3>img_arr_3[index]?'/images/icon_star-active.png':'/images/icon_star.png'}}" />
+            </view>
+            <view class='evalution_star'>
+                <view>卫生</view>
+                <image wx:for='{{img_arr_4}}' wx:key='index' mode='widthFix' bindtap='starClick_4' id='{{img_arr_4[index]+1}}' data-arr-four='{{index+1}}' src="{{cur_index_4>img_arr_4[index]?'/images/icon_star-active.png':'/images/icon_star.png'}}" />
+            </view>
+        </view>
+        <view class='page_part'>
+            <textarea name='note' placeholder-style='color:#ccc;' placeholder='评价得积分，说点什么吧...' />
+        </view>
+
+        <button class='page_btn' formType='submit'>提交</button>
+    </form>
+</view>

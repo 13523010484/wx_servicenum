@@ -1,0 +1,66 @@
+@import '/pages/commonCss/common.wxss';
+
+.page_part {
+    margin-top: 24rpx;
+    padding: 40rpx 30rpx;
+    background-color: #fff;
+}
+
+.page_part:first-child {
+    margin-top: 0;
+}
+
+.page_part>view:first-child {
+    font-size: 32rpx;
+    color: #333;
+}
+
+.page_part .evalution_star {
+    margin-top: 32rpx;
+    display: flex;
+    align-items: center;
+}
+
+.page_part .evalution_star>view {
+    margin-right: 39rpx;
+    font-size: 28rpx;
+    color: #333;
+}
+
+.page_part .evalution_star image {
+    width: 46rpx;
+    margin-right: 36rpx;
+}
+
+.page_part textarea {
+    font-size: 30rpx;
+    color: #666;
+    line-height: 48rpx;
+    width: 100%;
+}
+
+checkbox-group {
+    margin-top: 49rpx;
+}
+
+checkbox-group label.ui-check .cell {
+    height: 70rpx;
+    line-height: 70rpx;
+    padding: 0 35rpx;
+    margin: 16rpx 21rpx 0 0;
+    margin-bottom: 16rpx;
+    font-size: 26rpx;
+    display: inline-block;
+    background-color: #f5f5f5;
+    border-radius: 70rpx;
+    color: #bbb;
+}
+
+checkbox-group label.ui-check checkbox {
+    display: none;
+}
+
+.ui-check checkbox[checked]+.cell {
+    color: #fff;
+    background: #fba451;
+}

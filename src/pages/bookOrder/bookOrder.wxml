@@ -1,0 +1,56 @@
+<view class='page'>
+    <view class='tab_wrap'>
+        <view class='tab {{status==2?"active":""}}' id='2' bindtap='switchTab'>待行权</view>
+        <view class='tab {{status==8?"active":""}}' id='8' bindtap='switchTab'>已行权</view>
+        <view class='tab {{status==32?"active":""}}' id='32' bindtap='switchTab'>已取消</view>
+    </view>
+    <block>
+        <view class='tab_items' wx:for='{{status_data}}' wx:key='index'>
+            <block wx:for='{{item.book_arr}}' wx:key='index'>
+                <navigator url='/pages/bookingSubmit/bookingSubmit?status={{status}}&book_id={{item.book_id}}&cp_id={{item.cp_id}}&mrd_id={{item.mrd_id}}&srnc_id={{item.srnc_id}}&order_category={{item.order_category}}&card_type_id={{item.mcd_id}}&"string"={{""}}' class='tab_item'
+                    hover-class='none'>
+                    <view class='item-left'>
+                        <view>
+                            <text class='badge {{(item.order_category==1?"orange":"")||(item.order_category==2?"red":"")||(item.order_category==4?"green":"")||(item.order_category==8?"blue":"")||(item.order_category==16?"yellow":"")}}'>{{(item.order_category==1?'用':'')||(item.order_category==2?'餐':'')||(item.order_category==4?'住':'')||(item.order_category==8?'场':'')||(item.order_category==16?'游':'')}}</text>
+                            <text class='header'>{{item.right_name}}</text>
+                        </view>
+                        <!-- 领用类  -->
+                        <block wx:if='{{item.order_category == 1}}'>
+                            <view>预订日期：{{item.book_date}}</view>
+                            <view>领用时间:（{{item.book_time}}）</view>
+                            <view>数量：{{item.book_num}}</view>
+                        </block>
+                        <!-- 用餐类  -->
+                        <block wx:if='{{item.order_category == 2}}'>
+                            <view>预订日期：{{item.book_date}}</view>
+                            <view>用餐时间:（{{item.book_time}}）</view>
+                            <view>数量：{{item.book_num}}</view>
+                        </block>
+                        <!-- 入住类  -->
+                        <block wx:if='{{item.order_category == 4}}'>
+                            <view>预订日期：{{item.book_time}}</view>
+                            <view>数量：{{item.book_num}}</view>
+                        </block>
+                        <!-- 场地类  -->
+                        <block wx:if='{{item.order_category == 8}}'>
+                            <view>预订日期：{{item.book_date}}</view>
+                            <view>预订时间：{{item.book_time}}</view>
+                            <view>数量：{{item.book_num}}</view>
+                            <view>包间：{{item.book_door}}</view>
+                        </block>
+                        <!-- 游玩类  -->
+                        <block wx:if='{{item.order_category == 16}}'>
+                            <view>预订日期：{{item.book_date}}</view>
+                            <view>预订时间段:（{{item.book_time}}）</view>
+                        </block>
+                    </view>
+                    <view hidden='{{status!=2}}' class='item-right font_green'>待行权</view>
+                    <navigator wx:if='{{item.pj_count == 0}}' url='/pages/bookOrderEvaluation/bookOrderEvaluation?cp_id={{item.cp_id}}&book_id={{item.book_id}}&mcd_id={{item.mcd_id}}&mrd_id={{item.mrd_id}}&srnc_id={{item.srnc_id}}' hidden='{{status!=8}}' class='item-right btn'>评价</navigator>
+                    <view wx:if='{{item.pj_count != 0}}' hidden='{{status!=8}}' class='item-right btn cancel'>已评价</view>
+                    <view hidden='{{status!=32}}' class='item-right'>已取消</view>
+                </navigator>
+            </block>
+            <view class='tab_bottom'>预约编号：{{item.book_id}}</view>
+        </view>
+    </block>
+</view>

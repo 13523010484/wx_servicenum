@@ -1,0 +1,241 @@
+<form bindsubmit="formSubmit">
+    <view class='page_content-top'>
+        <view class='page_header'>
+            <text class='badge {{(results.curRights.order_category == 1?"orange":"")||(results.curRights.order_category == 2?"red":"")||(results.curRights.order_category == 4?"green":"")||(results.curRights.order_category == 8?"blue":"")||(results.curRights.order_category == 16?"yellow":"")}}'>{{results.orderCategoryName}}</text>
+            <text class='header'>{{results.curRights.rights_name}}</text>
+        </view>
+        <view class='booking-tip'>{{results.curRights.cp_name}}</view>
+    </view>
+    <view wx:if='{{results.curRights.is_rights_time ==1}}' class='item'>
+        <view>扣除权益</view>
+        <view class='right-grey'>{{results.curRights.used_rights_name}}</view>
+    </view>
+    <block>
+        <view class='item booking-date {{results.curRights.order_category == 4?"live_book_date":""}}' bindtap='bookDate'>
+            <view>预订日期</view>
+            <view>{{book_date}}</view>
+        </view>
+    </block>
+    <!-- 场地类：预订时间、包间  -->
+    <block wx:if='{{results.orderCategory =="8"}}'>
+        <picker bindchange="select_ground_period" value="{{period_index}}" range="{{ground_period_arr}}">
+            <view class='item booking-date'>
+                <view>预订时间</view>
+                <view>{{ground_period_arr[period_index]}}</view>
+            </view>
+        </picker>
+        <view bindtap="select_ground_room" class='item booking-date ground_room'>
+            <view>包间</view>
+            <view>{{room_name}}</view>
+        </view>
+        <view class='item room_num'>
+            <view>数量</view>
+            <view>{{room_num}}</view>
+        </view>
+    </block>
+    <!-- 数量  -->
+    <view wx:if='{{(results.orderCategory ==1)||(results.orderCategory ==4)||(results.orderCategory ==2)}}' class='item booking-num'>
+        <view>数量</view>
+        <view class='icon_add-wrap'>
+            <image mode='widthFix' id='numAdd' bindtap='change_num' src='{{srcReduce}}' />
+            <text class='show-num'>{{num}}</text>
+            <image mode='widthFix' id='numDown' bindtap='change_num' src='{{srcIncrease}}' />
+        </view>
+    </view>
+    <view wx:if='{{results.orderCategory ==1}}' class='item booking-date'>
+        <view>领用时间</view>
+        <view>
+            <picker bindchange="AM_PM_select" value="{{receive_time}}" range="{{AM_PM_arr}}">{{AM_PM_arr[receive_time]}}</picker>
+        </view>
+    </view>
+    <view wx:if='{{results.orderCategory ==2}}' style='border-bottom:none;'>
+        <picker bindchange="dinner_time" value="{{dinner_period_index}}" range="{{dinner_period_arr}}">
+            <view class='item booking-date'>
+                <view>用餐时间</view>
+                <view>{{dinner_period_arr[dinner_period_index]}}</view>
+            </view>
+        </picker>
+        <picker bindchange="dinner_type" value="{{dinner_type_index}}" range="{{dinner_type_arr}}">
+            <view class='item booking-date'>
+                <view>餐型</view>
+                <view>{{dinner_type_arr[dinner_type_index]}}</view>
+            </view>
+        </picker>
+        <picker bindchange="dinner_desk" value="{{dinner_desk_index}}" range="{{dinner_desk_arr}}">
+            <view class='item booking-date'>
+                <view>桌型</view>
+                <view>{{dinner_desk_arr[dinner_desk_index]}}</view>
+            </view>
+        </picker>
+    </view>
+    <!--时间选择、选择上午或者下午  -->
+    <view wx:if='{{results.orderCategory =="16"}}' class='page_select-date'>
+        <view class='item page_content-title'>
+            <picker bindchange="selectPeriod" value="{{selectPeriodIndex}}" range="{{selectPeriodArr}}">
+                <view class="picker">{{selectPeriodArr[selectPeriodIndex]}}</view>
+            </picker>
+            <view>可用资源</view>
+            <view>设置预订数量</view>
+        </view>
+
+        <!-- 选择的时间段是上午  -->
+        <view class='wx_for-lists' wx:for='{{resultsPeriod}}' wx:key='index'>
+            <view class='item page_content-center' wx:if='{{(selectPeriodIndex==0)&&(item.period == "上午")}}'>
+                <view>
+                    <text>{{item.book_time}}</text>
+                </view>
+                <view>{{item.available_info}}</view>
+                <view>
+                    <input type='number' data-index='{{index}}' bindinput='bookNum' placeholder='请输入...' />
+                </view>
+            </view>
+
+            <view class='item page_content-center' wx:if='{{(selectPeriodIndex==1)&&(item.period == "下午")}}'>
+                <view>
+                    <text>{{item.book_time}}</text>
+                </view>
+                <view>{{item.available_info}}</view>
+                <view>
+                    <input type='number' data-index='{{index}}' bindinput='bookNum' placeholder='请输入...' />
+                </view>
+            </view>
+
+            <view class='item page_content-center' wx:if='{{(selectPeriodIndex==2)}}'>
+                <view>
+                    <text>{{item.book_time}}</text>
+                </view>
+                <view>{{item.available_info}}</view>
+                <view>
+                    <input type='number' data-index='{{index}}' bindinput='bookNum' placeholder='请输入...' />
+                </view>
+            </view>
+        </view>
+    </view>
+    <!-- 使用人  -->
+    <view class='item booking-date' bindtap='showModal'>
+        <view>使用人</view>
+        <view>{{ pleaseSelect||'请选择'}}</view>
+    </view>
+    <!-- "餐" 忌口  -->
+    <view wx:if='{{results.orderCategory =="2"}}' class='item food-diet'>
+        <view class='food_diet-title'>忌口</view>
+        <view class='food_diet-checkbox'>
+            <checkbox-group bindchange="acfs_checkbox">
+                <label wx:for="{{results.acfDict}}">
+                    <checkbox value="{{item.id}}" />
+                    <view>{{item.name}}</view>
+                </label>
+            </checkbox-group>
+        </view>
+    </view>
+    <view class='page_content-note'>
+        <view>备注</view>
+        <textarea wx:if='{{show_textarea}}' name='note' placeholder='请输入备注...'></textarea>
+    </view>
+    <!-- 立即预订跳转的页面  -->
+    <view class='page_btn page_btn-wrap'>
+        <button formType="submit" id='addCarts'>加购物车</button>
+        <button formType="submit" id='submitBook' class='lastchild-bgc'>提交预订</button>
+    </view>
+
+    <!--使用人  -->
+    <view wx:if="{{showModalStatus}}">
+        <view class="commodity_screen" bindtap="hideModal"></view>
+        <view class="commodity_attr_box">
+            <view class='layer_top-btn'>
+                <view bindtap='hideModal'>取消</view>
+                <view>添加使用人</view>
+                <view bindtap='btnConfirm'>确定</view>
+            </view>
+            <view class='layer_center-items'>
+                <checkbox-group class='checkbox-group' bindchange="checkboxChange">
+                    <label class='checkbox'>是否有老人
+                        <checkbox value='elder_persons' checked='{{has_no_elder_persons}}' />
+                    </label>
+                    <label class='checkbox'>是否有儿童
+                        <checkbox value='child_persons' checked='{{has_no_child_persons}}' />
+                    </label>
+                </checkbox-group>
+                <view wx:for='{{numChange}}' wx:key='{{index}}'>
+                    <view class='item booking-num' data-index='{{index}}'>
+                        <view>{{item.gender}}</view>
+                        <view class='icon_add-wrap'>
+                            <image mode='widthFix' bindtap='Reduce2' data-obj="{{obj}}" data-index="{{index}}" src='{{item.srcReduce}}' />
+                            <text class='show-num'>{{item.num}}</text>
+                            <image mode='widthFix' bindtap='Increase2' data-index="{{index}}" src='{{item.srcIncrease}}' />
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+
+    <!--包间  -->
+    <view wx:if="{{!ground_room_show}}">
+        <view class="commodity_screen" bindtap="ground_room_cancel"></view>
+        <view class="commodity_attr_box">
+            <view class='layer_top-btn'>
+                <view bindtap='ground_room_cancel'>取消</view>
+                <view>选择包间</view>
+                <view bindtap='ground_room_confirm'>确定</view>
+            </view>
+            <view class='layer_center-items'>
+                <checkbox-group class='checkbox-group' bindchange="ground_room_checkbox">
+                    <block wx:for='{{ground_room_arr}}' wx:key='index'>
+                        <label class='checkbox'>{{item.ground_name}}
+                            <checkbox value='{{"*"+item.door_id+"*"+item.ground_name}}' checked='{{item.checked}}' />
+                        </label>
+                    </block>
+                </checkbox-group>
+            </view>
+        </view>
+    </view>
+
+    <!-- 日历组件  -->
+    <view wx:if='{{!showCalendar}}' class='calendar'>
+        <view class='calendar-mask' bindtap='cancel'></view>
+        <view class='calendar-content'>
+            <view class='calendar_toolbar'>
+                <view class='toolbar-cancel' bindtap='cancel'>取消</view>
+                <view class='toolbar-title'>可预订日期选择</view>
+                <view class='toolbar-confirm' bindtap='confirm'>确定</view>
+            </view>
+            <view class='select-month'>
+                <text>{{cur_mon_str}}</text>
+            </view>
+            <view class='weekday-title'>
+                <view>日</view>
+                <view>一</view>
+                <view>二</view>
+                <view>三</view>
+                <view>四</view>
+                <view>五</view>
+                <view>六</view>
+            </view>
+            <view class='days'>
+                <!-- 多选  -->
+                <checkbox-group wx:if='{{results.curRights.order_category == 4}}' bindchange='bindChange'>
+                    <block wx:for='{{week_arr}}' wx:key='index'>
+                        <label class='ui-check {{checked==true?"active":""}}'>
+                            <checkbox disabled='{{item.available_info == "无"?true:false}}' value='{{item.book_date}}' checked='{{item.checked}}' />
+                            <view class='cell {{item.show_time == "01"?"cell-color":""}}'>{{item.show_time}}
+                                <text class='num-mark'>{{item.available_info}}</text>
+                            </view>
+                        </label>
+                    </block>
+                </checkbox-group>
+                <!-- 单选  -->
+                <radio-group wx:else bindchange='bindChange'>
+                    <block wx:for='{{week_arr}}' wx:key='index'>
+                        <label class='ui-check {{checked==true?"active":""}}'>
+                            <radio disabled='{{item.available_info == "无"?true:false}}' value='{{item.book_date}}' checked='{{item.checked}}' />
+                            <view class='cell {{item.show_time == "01"?"cell-color":""}}'>{{item.show_time}}
+                                <text class='num-mark'>{{item.available_info}}</text>
+                            </view>
+                        </label>
+                    </block>
+                </radio-group>
+            </view>
+        </view>
+    </view>
+</form>
