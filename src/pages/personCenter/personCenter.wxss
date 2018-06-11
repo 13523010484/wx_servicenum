@@ -17,6 +17,7 @@ page {
     height: 166rpx;
     margin-top: 80rpx;
     border-radius: 50%;
+    overflow: hidden;
 }
 
 .userinfo-nickname {
@@ -54,10 +55,11 @@ page {
 
 .item {
     padding: 0 48rpx;
-    font-size: 32rpx;
+    font-size: 30rpx;
     height: 90rpx;
     display: flex;
     align-items: center;
+    color: #333;
 }
 
 .item>image {
@@ -74,10 +76,6 @@ page {
     border-bottom: none;
 }
 
-.item:active {
-    background: #f2f2f2;
-}
-
 .item text:first-child {
     width: 40rpx;
     height: 40rpx;
@@ -86,13 +84,12 @@ page {
     margin-right: 20rpx;
 }
 
-.item text:last-child {
-    position: absolute;
-    right: 48rpx;
+.icon_arrow>.item {
+    position: relative;
 }
 
-.item text:last-child::after {
-    content: " ";
+.icon_arrow>.item:after {
+    content: "";
     display: inline-block;
     height: 12rpx;
     width: 12rpx;
@@ -101,9 +98,27 @@ page {
     border-style: solid;
     -webkit-transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
     transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
-    top: -2px;
     position: absolute;
     top: 50%;
-    margin-top: -5rpx;
-    right: 0;
+    margin-top: -8rpx;
+    right: 48rpx;
+}
+
+.version_info {
+    display: flex;
+    justify-content: space-between;
+}
+
+.version_info>view:first-child {
+    display: flex;
+}
+
+.version_info>view image {
+    width: 48rpx;
+    height: 48rpx;
+    margin-right: 15rpx;
+}
+
+.bind_cancel {
+    color: #e64340;
 }

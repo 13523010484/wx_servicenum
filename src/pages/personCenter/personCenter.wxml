@@ -2,59 +2,65 @@
 <view class="page">
     <view class='userinfo_wrap'>
         <view class="userinfo">
-            <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
-            <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+            <open-data class="userinfo-avatar" type="userAvatarUrl"></open-data>
+            <open-data class="userinfo-nickname" type="userNickName"></open-data>
         </view>
         <view class='order-wrap'>
-            <view>
+            <view bindtap='alert'>
                 <text>0</text>
                 <text>预订单</text>
             </view>
-            <view>
+            <view bindtap='alert'>
                 <text>1</text>
                 <text>待评价</text>
             </view>
-            <view>
+            <view bindtap='alert'>
                 <text>12</text>
                 <text>积分</text>
             </view>
         </view>
     </view>
     <view class='userinfo_items'>
+        <view class='item version_info'>
+            <view>
+                <image src='/images/booking.png' />
+                <view>当前版本</view>
+            </view>
+            <view>v1.0.1</view>
+        </view>
+        <view class='item' bindtap='updateVersion'>
+            <image src='/images/booking.png' />
+            <view>版本更新</view>
+        </view>
+    </view>
+    <view class='userinfo_items icon_arrow'>
         <navigator url='/pages/memberCard/memberCard' class='item'>
             <image src='/images/booking.png' />
             <text>我的会员卡</text>
-            <text></text>
         </navigator>
-        <navigator url='/pages/reservationAuthorization/reservationAuthorization' class='item'>
+        <view class='item' bindtap='alert'>
             <image src='/images/booking.png' />
             <text>我的授权</text>
-            <text></text>
+        </view>
+        <view class='item' bindtap='alert'>
+            <image src='/images/booking.png' />
+            <text>电子劵</text>
+        </view>
+        <!-- <navigator url='/pages/reservationAuthorization/reservationAuthorization' class='item'>
+            <image src='/images/booking.png' />
+            <text>我的授权</text>
         </navigator>
         <navigator url='/pages/electronicCoupons/electronicCoupons' class='item'>
             <image src='/images/booking.png' />
             <text>电子劵</text>
-            <text></text>
-        </navigator>
-        <navigator url='/pages/memberCard/memberCard' class='item'>
-            <image src='/images/booking.png' />
-            <text>我的会员卡</text>
-            <text></text>
-        </navigator>
-    </view>
-    <view class='userinfo_items'>
+        </navigator> -->
         <view class='item' bindtap='call'>
             <image src='/images/booking.png' />
             <text>电话客服</text>
-            <text></text>
         </view>
-    </view>
-
-    <view class='userinfo_items'>
-        <navigator open-type="redirect" url='/pages/bindCancel/bindCancel' class='item'>
+        <navigator url='/pages/bindCancel/bindCancel' class='item bind_cancel'>
             <image src='/images/booking.png' />
             <text>解除绑定</text>
-            <text></text>
         </navigator>
     </view>
 </view>

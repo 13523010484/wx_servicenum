@@ -1,34 +1,24 @@
 <!--pages/memberCard/memberCard.wxml-->
 <view class='page'>
-    <view class='items' wx:for='{{resultData}}'>
-        <view class='item'>
-            <view class='img'>
-                <image mode='widthFix' src='{{item.save_path}}' />
-            </view>
-            <view class='txt'>
-                <view class='txt-hd'>
-                    <view class='header'>{{item.card_name}}</view>
-                    <view class='time'>有效期：{{item.begin_date}}至{{item.invalid_date}}日</view>
+    <block wx:if='{{resultData.number > 0}}'>
+        <view class='items' wx:for='{{resultData.list}}'>
+            <view class='item'>
+                <view class='img'>
+                    <image mode='widthFix' src='{{item.save_path}}' />
                 </view>
-                <navigator url='{{item.status_name==1?"/pages/cardRights/cardRights?member_id="+item.member_id:"/pages/memberCardActivation/memberCardActivation?member_id="+item.member_id}}' class='txt-bd'>{{item.status_name==0?'激活':'卡权益'}}</navigator>
+                <view class='txt'>
+                    <view class='txt-hd'>
+                        <view class='header'>{{item.card_name}}</view>
+                        <view class='time'>有效期：{{item.begin_date}}至{{item.invalid_date}}日</view>
+                    </view>
+                    <navigator url='{{item.status_name==1?"/pages/cardRights/cardRights?member_id="+item.member_id:"/pages/memberCardActivation/memberCardActivation?member_id="+item.member_id}}' class='txt-bd'>{{item.status_name==0?'激活':'卡权益'}}</navigator>
+                </view>
             </view>
         </view>
-        <!-- <view class='item'>
-            <view class='img'>
-                <image src='/images/logo.png' />
-            </view>
-            <view class='txt'>
-                <view class='txt-hd'>
-                    <view class='header'>发现之旅</view>
-                    <view class='time'>有效期：2016-10-17至2017-12-12日</view>
-                </view>
-                <navigator url='/pages/cardRights/cardRights?member_id={{item.member_id}}' class='txt-bd'>卡权益</navigator>
-            </view>
-        </view> -->
-    </view>
+    </block>
 
     <!-- 如果没有数据时，显示暂无内容  -->
-    <view>
-
+    <view class='empty_tip' wx:if='{{resultData.number == 0}}'>
+        <view>暂无数据哦~</view>
     </view>
 </view>

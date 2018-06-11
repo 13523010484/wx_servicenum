@@ -4,17 +4,18 @@ Page({
     data: {
         tab_status: 0,
         search_key: '',
-        cms_code: wx.getStorageSync('cmsCode'),
+        cms_code: '',
         results: ''
     },
 
     // 页面加载时的数据请求
     onLoad: function (options) {
-        console.log('options:');
-        console.log(options);
-
+        var cms_code = wx.getStorageSync('cmsCode');
+        console.log('搜索的接口获取cms_code:');
+        console.log(cms_code);
         this.setData({
-            search_key: options.search_key
+            search_key: options.search_key,
+            cms_code: cms_code
         })
         this.get_data(options.options, this.data.cms_code);
     },

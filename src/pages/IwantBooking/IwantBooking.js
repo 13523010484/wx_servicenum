@@ -8,18 +8,25 @@ Page({
     },
 
     // 页面加载时
-    onLoad: function () {
+    onShow: function () {
         var that = this, cmsCode = wx.getStorageSync('cmsCode');
-        // 请求首页预订类别列表的数据
-        app.request(app.api.getBookListUrl, { cms_code: cmsCode }, function (res) {
-            if (res.code == 1) {
-                var resultData = res.data;
-                wx.setStorageSync('isBindCard', resultData.can_used_card_num);//缓存用户会卡绑定状态
-                that.setData({
-                    resultData: resultData
-                })
-            }
-        })
+        if (cmsCode){
+            // 请求首页预订类别列表的数据
+            app.request(app.api.getBookListUrl, { cms_code: cmsCode }, function (res) {
+                if (res.code == 1) {
+                    var resultData = res.data;
+                    wx.setStorageSync('isBindCard', resultData.can_used_card_num);//缓存用户会卡绑定状态
+                    that.setData({
+                        resultData: resultData
+                    })
+                }
+            })
+        }else {
+            wx.redirectTo({
+                url: '/pages/login/login'
+            })
+        }
+       
     },
 
     // bindKeyInput 

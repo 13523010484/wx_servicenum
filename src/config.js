@@ -1,5 +1,6 @@
 var host = 'https://cmswx.orenda.com.cn'
-// var host = 'http://192.16.8.54:8082'
+// var host = "http://192.16.8.40:8083"// 海斌
+// var host = 'http://192.16.8.54:8082'// 栋伟
 
 var config = {
     host: host,
@@ -9,7 +10,7 @@ var config = {
 
     // 获取用户手机号
     getMobileUrl: `${host}/wxsapp/v2/p/common?act=get_mobile`,
-
+ 
     // 发送验证码
     sendCodeUrl: `${host}/wxsapp/v2/p/common?act=send_code`,
 

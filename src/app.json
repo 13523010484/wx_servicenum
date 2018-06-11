@@ -1,5 +1,6 @@
 {
     "pages": [
+        "pages/startPages/startPages",
         "pages/personCenter/personCenter",
         "pages/login/login",
         "pages/IwantBooking/IwantBooking",
