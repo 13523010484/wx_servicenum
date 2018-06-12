@@ -197,7 +197,8 @@
 				{
 					"id": -1,
 					"name": "启动页",
-					"pathName": "pages/startPages/startPages"
+					"pathName": "pages/startPages/startPages",
+					"query": ""
 				}
 			]
 		}

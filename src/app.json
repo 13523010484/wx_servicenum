@@ -1,9 +1,9 @@
 {
     "pages": [
         "pages/startPages/startPages",
+        "pages/IwantBooking/IwantBooking",
         "pages/personCenter/personCenter",
         "pages/login/login",
-        "pages/IwantBooking/IwantBooking",
         "pages/bookOrder/bookOrder",
         "pages/bindSuccess/bindSuccess",
         "pages/bindCancel/bindCancel",

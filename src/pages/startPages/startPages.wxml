@@ -1,2 +1,4 @@
 <!--pages/startPages/startPages.wxml-->
-<view></view>
+<view class='page'>
+    <image mode='widthFix' style='width:100%;' src='/images/start_page_bgc.jpg' />
+</view>

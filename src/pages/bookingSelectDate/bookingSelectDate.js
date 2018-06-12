@@ -50,8 +50,8 @@ Page({
 
     // onLoad页面加载时
     onLoad: function (options) {
-        console.log('onLoad:');
-        console.log(options);
+        // console.log('onLoad:');
+        // console.log(options);
         var that = this, cms_code = wx.getStorageSync('cmsCode'),
             params = {
                 book_id: options.book_id,
@@ -68,7 +68,7 @@ Page({
         });
 
         app.request(app.api.bookNowUrl, params, function (res) {
-            console.log('立即预订数据请求成功：');
+            // console.log('立即预订数据请求成功：');
             if (res.code == 1) {
                 var results = res.data;
                 that.setData({
@@ -163,8 +163,17 @@ Page({
 
     // 日历获取单选或者多选的值
     bindChange: function (e) {
+        var date_arr = e.detail.value;
+
+        // 入住类：预订日期多选，日期按照升序排列
+        if (this.data.results.curRights.order_category == 4) {
+            date_arr.sort(function (t1, t2) {
+                return new Date(t1).getTime() - new Date(t2).getTime()
+            })
+        }
+
         this.setData({
-            book_date: e.detail.value
+            book_date: date_arr
         })
     },
 
@@ -208,16 +217,10 @@ Page({
 
         // 游玩类：点击确认后请求上午下午时间段的接口
         if (this.data.results.orderCategory == '2') {
-            // console.log(this.data.week_arr);
-            // var available_info_arr = [];
-            // this.data.week_arr.forEach(function (item, index) {
-            //     available_info_arr.push(item.available_info);
-            // })
-
             // 用餐类：获取用餐时间、桌型的数据
             app.request(app.api.getDinnerTimeUrl, params, function (res) {
-                console.log('获取用餐时间的数据：');
-                console.log(res);
+                // console.log('获取用餐时间的数据：');
+                // console.log(res);
                 if (res.code == 1) {
                     if ((res.data.dinnerHouse != '') && (res.data.dinnerPeriod != '')) {
                         var dinner_results = res.data;// 后台返回的用餐时间和桌型的数据
@@ -244,7 +247,6 @@ Page({
                             dinner_period: dinner_results.dinnerPeriod[0].dinner_period,
                             dinner_door_id: dinner_door_id[0]
                         })
-
                     }
                 }
             })
@@ -252,8 +254,8 @@ Page({
         } else if (this.data.results.orderCategory == '8') {
             // 场地类：点击确定按钮返回的场地类包间信息的数据
             app.request(app.api.getRoomUrl, params, function (res) {
-                console.log('请求成功返回的包间数据：');
-                console.log(res);
+                // console.log('请求成功返回的包间数据：');
+                // console.log(res);
                 if (res.code == 1) {
                     var results_ground = res.data;
                     var groundPeriod = res.data.groundPeriod;
@@ -268,9 +270,7 @@ Page({
                         ground_period_arr: ground_period_arr,// 预订时间的数据
                     })
                 }
-
             })
-
         } else if (this.data.results.orderCategory == '16') {
             // 游玩类：点击确定按钮，返回的游玩类选择时间段的数据
             this.get_period_data('上午', function (res) {
@@ -286,7 +286,7 @@ Page({
                             PM_period.forEach(function (item, index) {
                                 item.period = '下午';
                             })
-                            console.log(AM_period.concat(PM_period))
+                            // console.log(AM_period.concat(PM_period))
                             that.setData({
                                 resultsPeriod: AM_period.concat(PM_period)
                             })
@@ -300,7 +300,6 @@ Page({
             showCalendar: true,
             show_textarea: true
         })
-
     },
 
     // 选择时间段：上午、中午、晚上
@@ -320,7 +319,6 @@ Page({
     // 场地类：选择预订时间
     select_ground_period: function (e) {
         if (this.data.book_date) {
-            console.log(e);
             this.setData({
                 period_index: e.detail.value
             })
@@ -398,7 +396,6 @@ Page({
                 dinner_desk_index: e.detail.value,
                 dinner_door_id: dinner_door_id[e.detail.value]
             })
-
         }
     },
 
@@ -456,7 +453,6 @@ Page({
         this.setData({
             resultsPeriod: resultsPeriod
         })
-
     },
 
     // 显示使用人的底部弹出层
@@ -515,8 +511,8 @@ Page({
 
     // formSubmit form表单提交，加入购物车
     formSubmit: function (e) {
-        console.log('点击提交');
-        console.log(e);
+        // console.log('点击提交');
+        // console.log(e);
         var that = this,
             arr = [],
             params = {},
@@ -564,8 +560,8 @@ Page({
             params.acfs = this.data.acfs.join();
             params.door_id = this.data.dinner_door_id;
 
-            console.log('用餐类的参数params：');
-            console.log(params);
+            // console.log('用餐类的参数params：');
+            // console.log(params);
 
         } else if ((this.data.results.orderCategory == '4') && (this.data.book_date)) {// 入住类
             // 入住类的参数
@@ -576,17 +572,24 @@ Page({
                 return new Date(t1).getTime() - new Date(t2).getTime()
             })
 
-            // console.log('入住类的日期合并：');
-            // console.log(date_arr);
-            // date_arr.forEach(function (item, index) {
-            //     if (date_arr.length == 1) {
-            //         var book_time = date_arr[0];
-            //     } else {
+            // time() 计算相隔时间的时间戳
+            function time(date) {
+                return new Date(date).getTime();
+            }
 
-            //     }
-            // })
+            for (var i = 0; i < date_arr.length; i++) {
 
-            console.log(date_arr);
+                date_arr.forEach(function (item, index) {
+                    if (time(date_arr[index + 1]) == time(date_arr[index]) + 86400000) {
+                        console.log(date_arr[index]);
+                        i++;
+                        return book_date = date_arr[index]
+                        console.log(i);
+                    } else {
+                        console.log(i);
+                    }
+                })
+            }
 
             date_arr.forEach(function (item, index) {
                 json_time_person.push({

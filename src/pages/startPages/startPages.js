@@ -1,12 +1,13 @@
 // pages/startPages/startPages.js
 Page({
     data: {
-
     },
-
-    onLoad: function (options) {
-        wx.showLoading({
-            title: '加载中...',
-        })
+    // 数据初始化加载时：
+    onLoad: function () {
+        setInterval(function () {
+            wx.switchTab({
+                url: '/pages/IwantBooking/IwantBooking'
+            })
+        }, 3000)
     }
 })
