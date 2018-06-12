@@ -1,3 +1,4 @@
+<!--pages/bookOrderEvaluation/bookOrderEvaluation.wxml-->
 <view class='page'>
     <form bindsubmit="formSubmit">
         <view class='page_part'>

@@ -1,3 +1,4 @@
+<!--pages/bookOrder/bookOrder.wxml-->
 <view class='page'>
     <view class='tab_wrap'>
         <view class='tab {{status==2?"active":""}}' id='2' bindtap='switchTab'>待行权</view>

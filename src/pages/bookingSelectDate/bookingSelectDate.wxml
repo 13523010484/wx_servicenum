@@ -1,3 +1,4 @@
+<!--pages/bookingSelectDate/bookingSelectDate.wxml-->
 <form bindsubmit="formSubmit">
     <view class='page_content-top'>
         <view class='page_header'>

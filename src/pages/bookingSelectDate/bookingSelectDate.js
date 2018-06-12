@@ -364,7 +364,7 @@ Page({
 
     // 用餐类：餐型的dinner_type事件
     dinner_type: function (e) {
-        if (this.data.book_date){
+        if (this.data.book_date) {
             var dinner_type_arr = [];
 
             this.data.results.dinnerStyle.forEach(function (item, index) {
@@ -381,7 +381,7 @@ Page({
 
     // 用餐类：桌型的dinner_desk事件
     dinner_desk: function (e) {
-        if(this.data.book_date){
+        if (this.data.book_date) {
             var dinner_desk_arr = [];
             var dinner_door_id = [];
             var dinner_period = this.data.dinner_results.dinnerPeriod[this.data.dinner_period_index].dinner_period;
@@ -576,6 +576,18 @@ Page({
                 return new Date(t1).getTime() - new Date(t2).getTime()
             })
 
+            // console.log('入住类的日期合并：');
+            // console.log(date_arr);
+            // date_arr.forEach(function (item, index) {
+            //     if (date_arr.length == 1) {
+            //         var book_time = date_arr[0];
+            //     } else {
+
+            //     }
+            // })
+
+            console.log(date_arr);
+
             date_arr.forEach(function (item, index) {
                 json_time_person.push({
                     book_time: item,
@@ -639,6 +651,7 @@ Page({
                     wx.showModal({
                         title: '提示',
                         content: res.message,
+                        showCancel: false
                     })
                 }
             })

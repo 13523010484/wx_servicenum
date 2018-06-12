@@ -1,3 +1,4 @@
+<!--pages/bookingSearchResults/bookingSearchResults.wxml-->
 <view class='page'>
     <view class='page_nav-wrap'>
         <view class='page_search'>
