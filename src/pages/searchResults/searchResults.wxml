@@ -6,7 +6,7 @@
     </view>
     <view class='tab_items'>
         <!--tab 消费点  -->
-        <view wx:if='{{tab_status == 0}}' class='tab_item' wx:for='{{results.cps.list}}'>
+         <view wx:if='{{tab_status == 0}}' class='tab_item' wx:for='{{results.cps.list}}'>
             <view class='tab_item'>
                 <view bindtap='jumpBookingRightsPage'>
                     <image mode='widthFix' src='/images/search_results-02.jpg' />
@@ -35,7 +35,7 @@
                     </view>
                 </view>
             </view>
-        </view>
+        </view> 
 
         <!--tab 权益  -->
         <navigator url='/pages/bookingNow/bookingNow?order_category={{item.order_category}}&srnc_id={{item.srnc_id}}&cp_id={{item.cp_id}}&mrd_id={{mrd_id}}&card_type_id={{card_type_id}}' wx:if='{{tab_status == 1}}' class='tab_item' wx:for='{{results.rights.list}}'>

@@ -170,11 +170,51 @@ Page({
             date_arr.sort(function (t1, t2) {
                 return new Date(t1).getTime() - new Date(t2).getTime()
             })
-        }
+            let resultStr = '';
+            if (date_arr.length == 1) {
+                resultStr = date_arr[0];
+            } else {
+                function getDateStr(startIndex) {
+                    let str = date_arr[startIndex];
+                    let i = startIndex;
+                    if (i < date_arr.length - 1) {
+                        while (new Date(date_arr[i + 1]).getTime() == new Date(date_arr[i]).getTime() + 86400000) {
+                            i++;
+                            if (i == date_arr.length - 1) {
+                                break;
+                            }
+                        }
+                    }
+                    if (i > startIndex) {
+                        str += '至' + date_arr[i]
+                    }
+                    return {
+                        str: str + ((i < date_arr.length - 1) ? '，' : ''),
+                        index: i
+                    }
+                }
 
-        this.setData({
-            book_date: date_arr
-        })
+                function getAllDateStr() {
+                    let startIndex = 0;
+                    let returnObj = {};
+                    while (startIndex <= date_arr.length - 1) {
+                        returnObj = getDateStr(startIndex);
+                        startIndex = returnObj.index + 1;
+                        resultStr += returnObj.str;
+                    }
+                    console.log(resultStr)
+                }
+
+                getAllDateStr();
+            }
+            this.setData({
+                book_date: resultStr
+            })
+        } else {
+            this.setData({
+                book_date: date_arr
+            })
+        }
     },
 
     // 日历的取消事件
@@ -254,8 +294,6 @@ Page({
         } else if (this.data.results.orderCategory == '8') {
             // 场地类：点击确定按钮返回的场地类包间信息的数据
             app.request(app.api.getRoomUrl, params, function (res) {
-                // console.log('请求成功返回的包间数据：');
-                // console.log(res);
                 if (res.code == 1) {
                     var results_ground = res.data;
                     var groundPeriod = res.data.groundPeriod;
@@ -286,7 +324,6 @@ Page({
                             PM_period.forEach(function (item, index) {
                                 item.period = '下午';
                             })
-                            // console.log(AM_period.concat(PM_period))
                             that.setData({
                                 resultsPeriod: AM_period.concat(PM_period)
                             })
@@ -560,36 +597,13 @@ Page({
             params.acfs = this.data.acfs.join();
             params.door_id = this.data.dinner_door_id;
 
-            // console.log('用餐类的参数params：');
-            // console.log(params);
-
         } else if ((this.data.results.orderCategory == '4') && (this.data.book_date)) {// 入住类
             // 入住类的参数
-            var date_arr = this.data.book_date;
+            var date_arr = this.data.book_date.split(',');
             var json_time_person = [];
 
-            date_arr.sort(function (t1, t2) {
-                return new Date(t1).getTime() - new Date(t2).getTime()
-            })
-
-            // time() 计算相隔时间的时间戳
-            function time(date) {
-                return new Date(date).getTime();
-            }
-
-            for (var i = 0; i < date_arr.length; i++) {
-
-                date_arr.forEach(function (item, index) {
-                    if (time(date_arr[index + 1]) == time(date_arr[index]) + 86400000) {
-                        console.log(date_arr[index]);
-                        i++;
-                        return book_date = date_arr[index]
-                        console.log(i);
-                    } else {
-                        console.log(i);
-                    }
-                })
-            }
+            console.log('入住类的日期显示：');
+            console.log(date_arr);
 
             date_arr.forEach(function (item, index) {
                 json_time_person.push({

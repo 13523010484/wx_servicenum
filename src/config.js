@@ -1,6 +1,5 @@
-var host = 'https://cmswx.orenda.com.cn'
-// var host = "http://192.16.8.40:8083"// 海斌
-// var host = 'http://192.16.8.54:8082'// 栋伟
+// var host = 'https://cmswx.orenda.com.cn'
+var host = "http://192.16.8.40:8083"
 
 var config = {
     host: host,

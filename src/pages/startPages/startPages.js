@@ -4,7 +4,7 @@ Page({
     },
     // 数据初始化加载时：
     onLoad: function () {
-        setInterval(function () {
+        setTimeout(function () {
             wx.switchTab({
                 url: '/pages/IwantBooking/IwantBooking'
             })

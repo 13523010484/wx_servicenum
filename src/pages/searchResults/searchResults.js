@@ -11,8 +11,7 @@ Page({
     // 页面加载时的数据请求
     onLoad: function (options) {
         var cms_code = wx.getStorageSync('cmsCode');
-        console.log('搜索的接口获取cms_code:');
-        console.log(cms_code);
+       
         this.setData({
             search_key: options.search_key,
             cms_code: cms_code
