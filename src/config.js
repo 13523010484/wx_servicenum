@@ -1,5 +1,3 @@
-// var host = 'https://cmswx.orenda.com.cn'
-var host = "http://192.16.8.40:8083"
 
 var config = {
     host: host,
